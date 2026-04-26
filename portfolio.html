@@ -35,10 +35,8 @@
             border-top: 5px solid var(--rutgers-red);
         }
 
-        /* Interactive Accordion Styles */
         .competency-section {
             margin-bottom: 20px;
-            border: none;
             border-radius: 12px;
             background: #fff;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
@@ -61,7 +59,7 @@
             font-weight: 700;
         }
 
-        .competency-header .plus-icon {
+        .plus-icon {
             font-size: 1.5rem;
             transition: transform 0.4s ease;
         }
@@ -87,12 +85,24 @@
         .artifact-card {
             padding: 25px 0;
             border-bottom: 1px solid #f0f0f0;
-            animation: fadeInItem 0.5s forwards;
         }
 
-        @keyframes fadeInItem {
-            from { opacity: 0; transform: translateX(-10px); }
-            to { opacity: 1; transform: translateX(0); }
+        .artifact-card:last-child {
+            border-bottom: none;
+        }
+
+        .artifact-title {
+            color: var(--rutgers-red);
+            font-weight: 800;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .artifact-meta {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
 
         .takeaway-box {
@@ -101,6 +111,7 @@
             padding: 20px;
             margin-top: 15px;
             border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
         }
     </style>
 </head>
@@ -125,9 +136,7 @@
         </div>
 
         <div class="portfolio-intro fade-in">
-            <p>
-                As a Master of Public Administration candidate at <strong>Rutgers University</strong>, I have developed fundamental competencies that bridge academic theory with professional practice. Below is a curated selection of artifacts representing my development in leadership, policy, and public service.
-            </p>
+            <p>As a Master of Public Administration candidate at <strong>Rutgers University</strong>, I have developed fundamental competencies that bridge academic theory with professional practice. Below are the key artifacts from my curriculum that demonstrate mastery in public service leadership.</p>
         </div>
 
         <div class="competency-section fade-in">
@@ -137,12 +146,17 @@
             </div>
             <div class="competency-content">
                 <div class="artifact-card">
-                    <div class="artifact-title" style="color: var(--rutgers-red); font-weight: 800;">Ethical Leadership Topic Paper</div>
-                    <div class="artifact-meta" style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Ethical Challenges in Public Service | Spring 2025</div>
-                    <p>Analyzed real workplace scenarios using ethical frameworks, focusing on how leadership decisions impact both employees and organizational outcomes.</p>
+                    <div class="artifact-title">Ethical Leadership Topic Paper</div>
+                    <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025</div>
+                    <p>Analyzed real workplace scenarios using ethical frameworks, focusing on how leadership decisions impact employees and organizational outcomes. Evaluated approaches to situations where no clear "right" answer existed.</p>
                     <div class="takeaway-box">
-                        <strong>Strategic Insight:</strong> Demonstrates the ability to balance competing priorities while maintaining integrity and fairness in complex Employment Relations environments.
+                        <strong>Strategic Insight:</strong> Balancing competing priorities while maintaining integrity. This directly connects to my role in Employment Relations.
                     </div>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Appreciative Inquiry Interview Project</div>
+                    <div class="artifact-meta">Managing Public Organizations | Fall 2024</div>
+                    <p>Interviewed a leader to understand how strengths-based approaches drive organizational change and foster a culture of development.</p>
                 </div>
             </div>
         </div>
@@ -154,31 +168,89 @@
             </div>
             <div class="competency-content">
                 <div class="artifact-card">
-                    <div class="artifact-title" style="color: var(--rutgers-red); font-weight: 800;">Policy Analysis Paper</div>
+                    <div class="artifact-title">Policy Analysis Paper</div>
                     <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025</div>
-                    <p>Evaluated how policies are interpreted and experienced in practice, and how they shape the way public services are delivered.</p>
+                    <p>Evaluated how policies are interpreted in practice and how they shape public service delivery for diverse groups.</p>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Federal Unions and Their Influence</div>
+                    <div class="artifact-meta">Labor Management Relations | Fall 2024</div>
+                    <p>Analysis of how labor policies and unions influence workplace negotiations and communication.</p>
                 </div>
             </div>
         </div>
 
+        <div class="competency-section fade-in">
+            <div class="competency-header" onclick="toggleSection(this)">
+                <span>3. Analysis & Critical Thinking</span>
+                <span class="plus-icon">+</span>
+            </div>
+            <div class="competency-content">
+                <div class="artifact-card">
+                    <div class="artifact-title">NJDOL Virtual Assistant Systems Analysis</div>
+                    <div class="artifact-meta">Technology & Public Administration | Fall 2025</div>
+                    <p>Critical analysis of technology systems in the public sector, examining the influence of leadership and human choice.</p>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Economic Analysis Assignment</div>
+                    <div class="artifact-meta">Economics for Public Administration | Summer 2025</div>
+                    <p>Applied economic principles to public sector challenges, focusing on resource allocation and data-driven decision making.</p>
+                </div>
+            </div>
         </div>
 
+        <div class="competency-section fade-in">
+            <div class="competency-header" onclick="toggleSection(this)">
+                <span>4. Public Service Perspective</span>
+                <span class="plus-icon">+</span>
+            </div>
+            <div class="competency-content">
+                <div class="artifact-card">
+                    <div class="artifact-title">HR Case Analysis</div>
+                    <div class="artifact-meta">Human Resources Management | Fall 2024</div>
+                    <p>Application of fairness, consistency, and accountability to real-world HR issues and employee support.</p>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Health Policy/ Finance Assignment</div>
+                    <div class="artifact-meta">Health Care Finance | Spring 2024</div>
+                    <p>Evaluated how financial budgeting and resource allocation impact service delivery within a healthcare context.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="competency-section fade-in">
+            <div class="competency-header" onclick="toggleSection(this)">
+                <span>5. Diversity & Communication</span>
+                <span class="plus-icon">+</span>
+            </div>
+            <div class="competency-content">
+                <div class="artifact-card">
+                    <div class="artifact-title">Labor Relations Analysis</div>
+                    <div class="artifact-meta">Labor Management Relations | Fall 2024</div>
+                    <p>Navigating communication in complex workplace environments to facilitate conflict resolution.</p>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Organizational Communication Reflection</div>
+                    <div class="artifact-meta">Managing Public Organizations | Fall 2024</div>
+                    <p>Reflected on leadership communication strategies, employee engagement, and effective collaboration.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
     <script>
-        // 1. Logic for Fading in elements on Scroll
-        const observerOptions = { threshold: 0.1 };
+        // Scroll Fade-in Logic
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+                if (entry.isIntersecting) entry.target.classList.add('visible');
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
-        // 2. Logic for Accordion Toggle
+        // Accordion Toggle Logic
         function toggleSection(header) {
-            const section = header.parentElement;
             const content = header.nextElementSibling;
             
             // Close others
