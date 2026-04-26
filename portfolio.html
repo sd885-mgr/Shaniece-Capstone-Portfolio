@@ -6,6 +6,22 @@
     <title>Portfolio | Shaniece Dillahunt</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .competency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .portfolio-intro {
+            background: #fff;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border-top: 4px solid var(--rutgers-red);
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -16,36 +32,65 @@
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="resume.html">MY Resume</a></li>
+                <li><a href="resume.html">My Resume</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
         <div class="section-title">
-            <h2>Capstone & Key Projects</h2>
+            <h2>Master of Public Administration Portfolio</h2>
             <div class="underline"></div>
         </div>
 
-        <div class="edu-item">
-            <span class="date">Current Project</span>
-            <h3>MPA Capstone Research</h3>
-            <p><strong>Rutgers University–Newark</strong></p>
-            <p>Developing a comprehensive analysis focused on public sector leadership and organizational behavior, specifically examining how inclusive practices impact employee retention in higher education settings.</p>
+        <div class="portfolio-intro">
+            <p>
+                I now have a better understanding of the fundamental competencies both inside and outside of the classroom thanks to <strong>Rutgers University</strong>. I am grateful to have obtained this Master of Public Administration degree to show my development as a public health and administration professional. I have selected key pieces of work from the MPA curriculum that demonstrate mastery of core administrative competencies.
+            </p>
         </div>
 
-        <div class="edu-item">
-            <span class="date">Leadership Initiative</span>
-            <h3>Employment Relations Framework</h3>
-            <p><strong>Rutgers University–Newark</strong></p>
-            <p>Streamlining communication protocols between departments to resolve employee relations matters more efficiently, ensuring compliance with institutional policies and equitable treatment for all staff.</p>
+        <div class="competency-grid">
+            <div class="cert-card">
+                <h3>Leadership & Management</h3>
+                <p style="font-size: 0.85rem; font-weight: 400; margin-top: 10px; color: #ccc;">
+                    Demonstrating the ability to lead and manage in public governance.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Policy Process</h3>
+                <p style="font-size: 0.85rem; font-weight: 400; margin-top: 10px; color: #ccc;">
+                    Analyzing and contributing to the public policy process.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Analysis & Critical Thinking</h3>
+                <p style="font-size: 0.85rem; font-weight: 400; margin-top: 10px; color: #ccc;">
+                    Applying critical thinking to solve complex administrative problems.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Public Service Perspective</h3>
+                <p style="font-size: 0.85rem; font-weight: 400; margin-top: 10px; color: #ccc;">
+                    Articulating and applying a public service perspective.
+                </p>
+            </div>
+
+            <div class="cert-card">
+                <h3>Communication & Diversity</h3>
+                <p style="font-size: 0.85rem; font-weight: 400; margin-top: 10px; color: #ccc;">
+                    Communicating and working productively with a diverse workforce.
+                </p>
+            </div>
         </div>
 
-        <div class="edu-item">
-            <span class="date">Strategic Analysis</span>
-            <h3>Healthcare Service Optimization</h3>
-            <p><strong>Summit Health</strong></p>
-            <p>Utilized over a decade of healthcare experience to identify bottlenecks in service delivery, proposing workflow adjustments that improved patient satisfaction and administrative efficiency.</p>
+        <div class="about-section" style="margin-top: 50px;">
+            <h3>Academic Highlights</h3>
+            <p>
+                My portfolio includes artifacts such as my <strong>MPA Capstone Research</strong>, strategic frameworks developed for <strong>Rutgers University–Newark</strong>, and workflow optimizations from my decade-long tenure at <strong>Summit Health</strong>. Each artifact represents a milestone in my journey toward ethical and effective public leadership.
+            </p>
         </div>
     </div>
 </body>
