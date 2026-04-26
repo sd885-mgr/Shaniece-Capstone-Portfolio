@@ -6,6 +6,36 @@
     <title>CV | Shaniece Dillahunt</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        .cv-header-flex {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #fff;
+            padding: 30px;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        .cv-icon {
+            width: 80px;
+            height: auto;
+        }
+        .cv-preview-container {
+            text-align: center;
+            background: #fff;
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        .resume-img {
+            width: 100%;
+            max-width: 700px;
+            border: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -15,27 +45,39 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="education.html">Education</a></li>
-                <li><a href="resume.html" class="active">My Resume</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container">
         <div class="section-title">
-            <h2>RESUME</h2>
+            <h2>Curriculum Vitae</h2>
             <div class="underline"></div>
         </div>
 
-        <div class="about-section" style="margin-bottom: 40px;">
-            <p>
-                As a dedicated public administration professional and a <strong>Master of Public Administration</strong> candidate at <strong>Rutgers University–Newark</strong>, I bring a unique blend of higher education management and healthcare service expertise. My current work as an <strong>Employment Relations Manager</strong>, combined with over a decade of experience at <strong>Summit Health</strong>, has shaped my commitment to ethical leadership and inclusive organizational practices. The following document outlines my full professional trajectory, academic honors, and specialized certifications in leadership and healthcare administration.
-            </p>
-            <p style="text-align: center; margin-top: 20px;">
-                <a href="shaniece_Dillahunt_CV.pdf" target="_blank" class="btn-main" style="font-size: 0.8rem;">Download Full PDF</a>
-            </p>
+        <div class="cv-header-flex">
+            <img src="cv-icon.png" alt="CV Icon" class="cv-icon">
+            <div>
+                <p style="margin: 0; font-size: 1.1rem; font-weight: 600;">Full Professional Resume</p>
+                <p style="margin: 5px 0 15px 0; color: #666; font-size: 0.9rem;">
+                    Download the official PDF version for a detailed look at my professional history and certifications.
+                </p>
+                <a href="Shaniece_Dillahunt_CV.pdf" target="_blank" class="btn-main" style="padding: 10px 20px; font-size: 0.8rem;">Download PDF</a>
+            </div>
         </div>
 
-        <iframe src="Shaniece_Dillahunt_CV.pdf" width="100%" height="800px" style="border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <div class="cv-preview-container">
+            <h3 style="margin-bottom: 20px; color: var(--dark-slate);">Document Preview</h3>
+            <img src="resume_preview.png" alt="Shaniece Dillahunt Resume Preview" class="resume-img">
+        </div>
+
+        <div class="section-title">
+            <h2 style="font-size: 1.5rem;">Interactive Viewer</h2>
+            <div class="underline" style="width: 40px; height: 3px;"></div>
+        </div>
+        <iframe src="Shaniece_Dillahunt_CV.pdf" width="100%" height="800px" style="border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 4px;">
         </iframe>
     </div>
 </body>
