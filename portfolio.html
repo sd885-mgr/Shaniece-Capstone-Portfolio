@@ -7,78 +7,100 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        .portfolio-intro {
-            background: #fff;
-            padding: 40px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            border-top: 4px solid var(--rutgers-red);
+        /* Interactive Background */
+        body {
+            background: radial-gradient(circle at top right, #fdf2f2 0%, #f4f4f4 50%);
+            min-height: 100vh;
         }
 
-        /* Accordion Styling */
+        /* Fade-in Animation Class */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .portfolio-intro {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(5px);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+            border-top: 5px solid var(--rutgers-red);
+        }
+
+        /* Interactive Accordion Styles */
         .competency-section {
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 12px;
             background: #fff;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .competency-section:hover {
+            transform: scale(1.01);
         }
 
         .competency-header {
             background: var(--dark-slate);
             color: white;
-            padding: 20px;
+            padding: 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 700;
-            transition: 0.3s;
         }
 
-        .competency-header:hover {
-            background: #333;
+        .competency-header .plus-icon {
+            font-size: 1.5rem;
+            transition: transform 0.4s ease;
+        }
+
+        .active-header .plus-icon {
+            transform: rotate(45deg);
         }
 
         .competency-content {
-            padding: 0 25px;
+            padding: 0 30px;
             max-height: 0;
+            opacity: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            transition: max-height 0.5s ease-in-out, opacity 0.4s ease;
             background: #fff;
+        }
+
+        .competency-content.open {
+            opacity: 1;
+            padding-bottom: 30px;
         }
 
         .artifact-card {
             padding: 25px 0;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f0f0f0;
+            animation: fadeInItem 0.5s forwards;
         }
 
-        .artifact-card:last-child {
-            border-bottom: none;
-        }
-
-        .artifact-title {
-            color: var(--rutgers-red);
-            font-weight: 800;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .artifact-meta {
-            font-size: 0.85rem;
-            color: #666;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        @keyframes fadeInItem {
+            from { opacity: 0; transform: translateX(-10px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .takeaway-box {
             background: #fffafa;
-            border-left: 3px solid var(--rutgers-red);
-            padding: 15px;
+            border-left: 4px solid var(--rutgers-red);
+            padding: 20px;
             margin-top: 15px;
-            font-size: 0.95rem;
+            border-radius: 0 8px 8px 0;
         }
     </style>
 </head>
@@ -97,133 +119,86 @@
     </nav>
 
     <div class="container">
-        <div class="section-title">
+        <div class="section-title fade-in">
             <h2>Core Competencies & Artifacts</h2>
             <div class="underline"></div>
         </div>
 
-        <div class="portfolio-intro">
+        <div class="portfolio-intro fade-in">
             <p>
                 As a Master of Public Administration candidate at <strong>Rutgers University</strong>, I have developed fundamental competencies that bridge academic theory with professional practice. Below is a curated selection of artifacts representing my development in leadership, policy, and public service.
             </p>
         </div>
 
-        <div class="competency-section">
+        <div class="competency-section fade-in">
             <div class="competency-header" onclick="toggleSection(this)">
                 <span>1. Leadership & Management</span>
-                <span>+</span>
+                <span class="plus-icon">+</span>
             </div>
             <div class="competency-content">
                 <div class="artifact-card">
-                    <div class="artifact-title">Ethical Leadership Topic Paper [cite: 5, 6]</div>
-                    <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025 [cite: 6]</div>
-                    <p>Analyzed workplace scenarios using ethical frameworks, focusing on accountability, fairness, and policy expectations[cite: 6].</p>
+                    <div class="artifact-title" style="color: var(--rutgers-red); font-weight: 800;">Ethical Leadership Topic Paper</div>
+                    <div class="artifact-meta" style="font-size: 0.8rem; color: #888; text-transform: uppercase;">Ethical Challenges in Public Service | Spring 2025</div>
+                    <p>Analyzed real workplace scenarios using ethical frameworks, focusing on how leadership decisions impact both employees and organizational outcomes.</p>
                     <div class="takeaway-box">
-                        <strong>Key Takeaway:</strong> Demonstrates the ability to balance competing priorities while maintaining integrity and fairness in Employment Relations[cite: 6].
+                        <strong>Strategic Insight:</strong> Demonstrates the ability to balance competing priorities while maintaining integrity and fairness in complex Employment Relations environments.
                     </div>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Appreciative Inquiry Interview Project [cite: 6]</div>
-                    <div class="artifact-meta">Managing Public Organizations | Fall 2024 [cite: 6]</div>
-                    <p>Designed a strengths-based interview framework to analyze how leadership culture supports employee development[cite: 6].</p>
                 </div>
             </div>
         </div>
 
-        <div class="competency-section">
+        <div class="competency-section fade-in">
             <div class="competency-header" onclick="toggleSection(this)">
                 <span>2. Policy Process</span>
-                <span>+</span>
+                <span class="plus-icon">+</span>
             </div>
             <div class="competency-content">
                 <div class="artifact-card">
-                    <div class="artifact-title">Policy Analysis Paper [cite: 7, 8]</div>
-                    <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025 [cite: 8]</div>
-                    <p>Evaluated how policies are interpreted and experienced in practice within organizational settings[cite: 8].</p>
-                    <div class="takeaway-box">
-                        <strong>Key Takeaway:</strong> Directly connects to my role in Employment Relations, where policy interpretation is a daily responsibility[cite: 8].
-                    </div>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Federal Unions and Their Influence [cite: 8]</div>
-                    <div class="artifact-meta">Labor Management Relations | Fall 2024 [cite: 8]</div>
-                    <p>Analyzed how labor policies shape communication and negotiations within public organizations[cite: 8].</p>
+                    <div class="artifact-title" style="color: var(--rutgers-red); font-weight: 800;">Policy Analysis Paper</div>
+                    <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025</div>
+                    <p>Evaluated how policies are interpreted and experienced in practice, and how they shape the way public services are delivered.</p>
                 </div>
             </div>
         </div>
 
-        <div class="competency-section">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>3. Analysis & Critical Thinking</span>
-                <span>+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">NJDOL Virtual Assistant Systems Analysis [cite: 9, 10]</div>
-                    <div class="artifact-meta">Technology & Public Administration | Fall 2025 [cite: 10]</div>
-                    <p>Examined how technology systems in the public sector are shaped by leadership and policy rather than just tools[cite: 10].</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Economic Analysis Assignment [cite: 10]</div>
-                    <div class="artifact-meta">Economics for Public Administration | Summer 2025 [cite: 10]</div>
-                    <p>Applied economic concepts to public sector decision-making and financial policy connections[cite: 10].</p>
-                </div>
-            </div>
         </div>
-
-        <div class="competency-section">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>4. Public Service Perspective</span>
-                <span>+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">HR Case Analysis [cite: 11, 12]</div>
-                    <div class="artifact-meta">Human Resources Management | Fall 2024 [cite: 12]</div>
-                    <p>Applied public service values of fairness and accountability to real-world HR management issues[cite: 12].</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Health Policy/ Finance Assignment [cite: 12]</div>
-                    <div class="artifact-meta">Health Care Finance | Spring 2024 [cite: 12]</div>
-                    <p>Evaluated how financial budgeting and resource allocation impact service delivery in healthcare[cite: 12].</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="competency-section">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>5. Diversity & Communication</span>
-                <span>+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">Labor Relations Analysis [cite: 13, 14]</div>
-                    <div class="artifact-meta">Labor Management Relations | Fall 2024 [cite: 14]</div>
-                    <p>Explored communication strategies essential for conflict resolution in complex workplace environments[cite: 14].</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Organizational Communication Reflection [cite: 14]</div>
-                    <div class="artifact-meta">Managing Public Organizations | Fall 2024 [cite: 14]</div>
-                    <p>Reflected on leadership communication, employee engagement, and effective collaboration[cite: 14].</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     <script>
+        // 1. Logic for Fading in elements on Scroll
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // 2. Logic for Accordion Toggle
         function toggleSection(header) {
+            const section = header.parentElement;
             const content = header.nextElementSibling;
-            const isOpen = content.style.maxHeight;
             
-            // Close all other sections
-            document.querySelectorAll('.competency-content').forEach(c => c.style.maxHeight = null);
-            document.querySelectorAll('.competency-header span:last-child').forEach(s => s.innerText = '+');
+            // Close others
+            document.querySelectorAll('.competency-content').forEach(c => {
+                if (c !== content) {
+                    c.style.maxHeight = null;
+                    c.classList.remove('open');
+                    c.parentElement.querySelector('.competency-header').classList.remove('active-header');
+                }
+            });
 
             // Toggle current
-            if (!isOpen) {
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove('open');
+                header.classList.remove('active-header');
+            } else {
                 content.style.maxHeight = content.scrollHeight + "px";
-                header.querySelector('span:last-child').innerText = '-';
+                content.classList.add('open');
+                header.classList.add('active-header');
             }
         }
     </script>
