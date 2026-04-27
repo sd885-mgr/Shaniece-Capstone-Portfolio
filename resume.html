@@ -3,52 +3,497 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Shaniece Dillahunt</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Resume | Shaniece Dillahunt | MPA Candidate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: url('profilepic.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #1a2c3e;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        /* Semi-transparent overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Subtle grain texture */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav, .container, footer-note {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(180, 200, 188, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #1f543e, #1e6b55);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: none;
+            color: #5f7f8c;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2c4b5e;
+            transition: 0.2s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            border-bottom-color: #2c8f72;
+            color: #1a705c;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 2rem 3rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(125deg, #1e5943, #236b53);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .underline {
+            height: 3px;
+            width: 70px;
+            background: #2c9b7a;
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* Resume Header Section - Enhanced */
+        .cv-header-flex {
+            display: flex;
+            gap: 2rem;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid #2c9b7a;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .cv-header-flex:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .cv-icon {
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
+        }
+
+        .cv-header-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e5a48;
+            margin-bottom: 1rem;
+        }
+
+        .cv-header-text p {
+            color: #3a5a6a;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .download-instruction {
+            font-style: italic;
+            background: rgba(44, 155, 122, 0.08);
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2c9b7a, #1e6f5c);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 155, 122, 0.3);
+            background: linear-gradient(135deg, #1e6f5c, #155a4a);
+        }
+
+        /* Quick Stats / Highlights Section - NEW (fills emptiness) */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid;
+        }
+
+        .stat-card:nth-child(1) { border-bottom-color: #2c7da0; }
+        .stat-card:nth-child(2) { border-bottom-color: #7c3aed; }
+        .stat-card:nth-child(3) { border-bottom-color: #d97706; }
+        .stat-card:nth-child(4) { border-bottom-color: #e05a5a; }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+        .stat-card:nth-child(1) .stat-number { color: #2c7da0; }
+        .stat-card:nth-child(2) .stat-number { color: #7c3aed; }
+        .stat-card:nth-child(3) .stat-number { color: #d97706; }
+        .stat-card:nth-child(4) .stat-number { color: #e05a5a; }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4a6a7a;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Skills Pills Section - NEW (adds visual richness) */
+        .skills-section {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(44, 155, 122, 0.2);
+        }
+
+        .skills-section h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e5a48;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-pill {
+            background: linear-gradient(135deg, rgba(44, 155, 122, 0.12), rgba(44, 155, 122, 0.05));
+            color: #1e6f5c;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(44, 155, 122, 0.3);
+        }
+        .skill-pill:hover {
+            transform: scale(1.03);
+            background: rgba(44, 155, 122, 0.2);
+            border-color: #2c9b7a;
+        }
+
+        /* Interactive Viewer Section - Enhanced */
+        .viewer-section {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(44, 155, 122, 0.2);
+        }
+
+        .viewer-section .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .viewer-section .section-title h2 {
+            font-size: 1.6rem;
+            background: none;
+            color: #1e5a48;
+            background: linear-gradient(125deg, #1e5943, #236b53);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .resume-iframe {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        /* Footer */
+        footer-note {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #5a7a6a;
+            font-weight: 500;
+            border-top: 1px solid rgba(120, 150, 135, 0.3);
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 780px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding: 0 1.2rem 2rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .cv-header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            .cv-icon {
+                margin: 0 auto;
+            }
+            .btn-main {
+                display: inline-block;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cv-header-flex {
+                padding: 1.2rem;
+            }
+            .cv-header-text h3 {
+                font-size: 1.4rem;
+            }
+            .stats-section {
+                grid-template-columns: 1fr;
+            }
+            .skills-grid {
+                gap: 0.6rem;
+            }
+            .skill-pill {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+            }
+        }
+    </style>
 </head>
-<body class="resume-bg"> <nav>
+<body>
+    <nav>
         <div class="nav-container">
-            <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
+            <div class="logo">Shaniece L Dillahunt<span>, MPA</span></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="education.html">Education</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="portfolio.html">My Portfolio</a></li>
                 <li><a href="resume.html" class="active">My Resume</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="overlay"></div>
-
     <div class="container resume-page">
         <div class="section-title">
-            <h2 style="color: #ffd700;">RESUME</h2>
+            <h2>📄 Professional Resume</h2>
             <div class="underline"></div>
         </div>
 
+        <!-- Enhanced Header Section -->
         <div class="cv-header-flex">
-            <img src="cv.jpg" alt="CV Icon" class="cv-icon">
+            <img src="cv.jpg" alt="Resume Icon" class="cv-icon" onerror="this.src='https://via.placeholder.com/100x120?text=CV'">
             <div class="cv-header-text">
-                <h3>Full Professional Resume</h3>
+                <h3>Shaniece L. Dillahunt, MPA Candidate</h3>
                 <p>
-                    As a dedicated public administration professional and a <strong>Master of Public Administration</strong> candidate, I bring a unique blend of higher education management and healthcare service expertise. The following document outlines my professional trajectory, academic honors, and specialized certifications.
+                    As a dedicated public administration professional and a <strong>Master of Public Administration</strong> candidate at Rutgers University–Newark, 
+                    I bring a unique blend of higher education management and healthcare service expertise. My professional trajectory reflects 
+                    strategic leadership, policy analysis, and a deep commitment to ethical public service.
                 </p>
-                <p class="download-instruction">Download the official PDF version for a detailed look at my professional history.</p>
-                <a href="Shaniece_Dillahunt_CV.pdf" target="_blank" class="btn-main small-btn">Download PDF</a>
+                <p class="download-instruction">
+                    📌 Download the official PDF version for a complete overview of my professional history, academic honors, and specialized certifications.
+                </p>
+                <a href="Shaniece_Dillahunt_CV.pdf" target="_blank" class="btn-main">📎 Download Full Resume (PDF)</a>
             </div>
         </div>
 
+        <!-- Quick Stats / Achievements - Fills empty space beautifully -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Years of Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">MPA</div>
+                <div class="stat-label">In Progress (2026)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Magna Cum Laude</div>
+                <div class="stat-label">BA in Public Affairs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Professional Certifications</div>
+            </div>
+        </div>
+
+        <!-- Core Competencies / Skills Section - Adds professional depth -->
+        <div class="skills-section">
+            <h3>✨ Core Competencies & Expertise</h3>
+            <div class="skills-grid">
+                <span class="skill-pill">Public Policy Analysis</span>
+                <span class="skill-pill">Ethical Leadership</span>
+                <span class="skill-pill">Strategic Management</span>
+                <span class="skill-pill">Organizational Development</span>
+                <span class="skill-pill">Healthcare Administration</span>
+                <span class="skill-pill">Data-Driven Decision Making</span>
+                <span class="skill-pill">Stakeholder Engagement</span>
+                <span class="skill-pill">Program Evaluation</span>
+                <span class="skill-pill">Public Finance</span>
+                <span class="skill-pill">Diversity & Inclusion</span>
+            </div>
+        </div>
+
+        <!-- Interactive PDF Viewer -->
         <div class="viewer-section">
             <div class="section-title">
-                <h2 style="font-size: 1.5rem; color: #fff;">Interactive Viewer</h2>
-                <div class="underline" style="width: 40px; height: 3px;"></div>
+                <h2>🔍 Interactive Resume Viewer</h2>
+                <div class="underline" style="width: 50px;"></div>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #5a7a6a;">Scroll through the document below or download for the full experience</p>
             </div>
-            <iframe src="Shaniece_Dillahunt_CV.pdf" width="100%" height="800px" class="resume-iframe">
+            <iframe src="Shaniece_Dillahunt_CV.pdf" width="100%" height="750px" class="resume-iframe" title="Shaniece Dillahunt Resume">
+                <p>Your browser doesn't support embedded PDFs. <a href="Shaniece_Dillahunt_CV.pdf">Download the resume instead.</a></p>
             </iframe>
         </div>
     </div>
+
+    <footer-note>
+        ✦ Public service leadership · Policy innovation · Strategic impact ✦
+    </footer-note>
 </body>
 </html>
