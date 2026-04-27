@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Portfolio | Shaniece Dillahunt | MPA Core</title>
+    <title>Portfolio | Shaniece Dillahunt | MPA Core Competencies</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -15,13 +15,12 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* LIGHT, AIRY BACKGROUND – maximum readability */
             background: #ffffff;
             color: #1a2c3e;
             line-height: 1.5;
         }
 
-        /* Navigation – refined lighter style */
+        /* Navigation – clean & light */
         nav {
             background: #ffffff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
@@ -46,13 +45,11 @@
             font-weight: 800;
             letter-spacing: -0.3px;
             color: #1f543e;
-            background: none;
         }
         .logo span {
             font-weight: 500;
             font-size: 0.9rem;
             color: #5f7f8c;
-            background: none;
         }
 
         nav ul {
@@ -83,7 +80,7 @@
             padding: 0 2rem 3rem;
         }
 
-        /* section title – crisp, light & readable */
+        /* section title */
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
@@ -94,9 +91,6 @@
             font-weight: 800;
             letter-spacing: -0.5px;
             color: #1f4e3e;
-            background: none;
-            -webkit-background-clip: unset;
-            background-clip: unset;
             margin-bottom: 0.5rem;
         }
 
@@ -117,48 +111,116 @@
             border-radius: 4px;
         }
 
-        /* COMPETENCY SECTIONS – lighter cards, better contrast */
+        /* COMPETENCY SECTIONS – each gets unique color palette */
         .competency-container {
             display: flex;
             flex-direction: column;
             gap: 2.5rem;
         }
 
+        /* base card style (overridden per section) */
         .competency-section {
-            background: #ffffff;
             border-radius: 28px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
             overflow: hidden;
-            transition: all 0.2s;
-            border: 1px solid #eef3f0;
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03), 0 2px 6px rgba(0, 0, 0, 0.02);
         }
 
+        /* custom colors for each competency */
+        /* Competency 1 - Leadership & Management (Teal / Blue accent) */
+        .comp-1 {
+            background: #ffffff;
+            border-left: 6px solid #2c7da0;
+            box-shadow: 0 8px 20px rgba(44,125,160,0.08);
+        }
+        .comp-1 .competency-header {
+            background: #f6fafd;
+            border-bottom: 2px solid #e1f0f7;
+        }
+        .comp-1 .competency-header h3 { color: #1f5e7e; }
+        .comp-1 .paper-card h4 { border-left-color: #2c7da0; color: #1e5775; }
+        .comp-1 .view-btn { background: #eef4f9; color: #1f6685; border-color: #d0e3ef; }
+        .comp-1 .view-btn:hover { background: #2c7da0; color: white; }
+
+        /* Competency 2 - Policy Process (Warm amber/gold) */
+        .comp-2 {
+            background: #ffffff;
+            border-left: 6px solid #d97706;
+            box-shadow: 0 8px 20px rgba(217,119,6,0.08);
+        }
+        .comp-2 .competency-header {
+            background: #fefaf5;
+            border-bottom: 2px solid #fef0e0;
+        }
+        .comp-2 .competency-header h3 { color: #b45f06; }
+        .comp-2 .paper-card h4 { border-left-color: #e68a2e; color: #aa5e00; }
+        .comp-2 .view-btn { background: #fef5ea; color: #c46f0a; border-color: #f5e2ce; }
+        .comp-2 .view-btn:hover { background: #d97706; color: white; }
+
+        /* Competency 3 - Analysis & Critical Thinking (Purple / Plum) */
+        .comp-3 {
+            background: #ffffff;
+            border-left: 6px solid #7c3aed;
+            box-shadow: 0 8px 20px rgba(124,58,237,0.08);
+        }
+        .comp-3 .competency-header {
+            background: #faf8ff;
+            border-bottom: 2px solid #ede9fe;
+        }
+        .comp-3 .competency-header h3 { color: #5b21b6; }
+        .comp-3 .paper-card h4 { border-left-color: #8b5cf6; color: #5b21b6; }
+        .comp-3 .view-btn { background: #f3f0ff; color: #6d28d9; border-color: #e2dcfc; }
+        .comp-3 .view-btn:hover { background: #7c3aed; color: white; }
+
+        /* Competency 4 - Public Service Perspective (Green / Sage) */
+        .comp-4 {
+            background: #ffffff;
+            border-left: 6px solid #2b9348;
+            box-shadow: 0 8px 20px rgba(43,147,72,0.08);
+        }
+        .comp-4 .competency-header {
+            background: #f4fbf5;
+            border-bottom: 2px solid #e2f3e4;
+        }
+        .comp-4 .competency-header h3 { color: #1f6e3d; }
+        .comp-4 .paper-card h4 { border-left-color: #3b9e5c; color: #1c6e3b; }
+        .comp-4 .view-btn { background: #eef7ef; color: #2c7a47; border-color: #d9ecd9; }
+        .comp-4 .view-btn:hover { background: #2b9348; color: white; }
+
+        /* Competency 5 - Communication & Interaction (Coral / Rose) */
+        .comp-5 {
+            background: #ffffff;
+            border-left: 6px solid #e05a5a;
+            box-shadow: 0 8px 20px rgba(224,90,90,0.08);
+        }
+        .comp-5 .competency-header {
+            background: #fef7f7;
+            border-bottom: 2px solid #fde2e2;
+        }
+        .comp-5 .competency-header h3 { color: #bc4e4e; }
+        .comp-5 .paper-card h4 { border-left-color: #e27373; color: #b14444; }
+        .comp-5 .view-btn { background: #fef0f0; color: #c75353; border-color: #fadfdf; }
+        .comp-5 .view-btn:hover { background: #e05a5a; color: white; }
+
+        /* shared header style */
         .competency-header {
-            background: #fefefe;
             padding: 1.8rem 2rem 1.2rem 2rem;
-            border-bottom: 1px solid #ecf3ef;
         }
-
         .competency-header h3 {
             font-size: 1.7rem;
             font-weight: 700;
-            color: #1e624b;
             margin-bottom: 0.6rem;
             letter-spacing: -0.2px;
-            background: none;
-            -webkit-background-clip: unset;
-            color: #1e624b;
         }
-
         .competency-header p {
-            color: #3b5e72;
             font-size: 1rem;
             line-height: 1.5;
             max-width: 90%;
             font-weight: 450;
+            color: #415f70;
         }
 
-        /* PAPER GRID – bright & spacious, high readability */
+        /* PAPER GRID – bright, spacious, consistent */
         .paper-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -168,30 +230,27 @@
         }
 
         .paper-card {
-            background: #fbfefc;
             border-radius: 24px;
             padding: 1.6rem;
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
-            border: 1px solid #e3ede8;
+            border: 1px solid #eef2f0;
             transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
+            background: #ffffff;
         }
 
         .paper-card:hover {
             transform: translateY(-4px);
-            border-color: #cbe2da;
-            box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.08);
-            background: white;
+            box-shadow: 0 14px 26px -12px rgba(0, 0, 0, 0.1);
+            border-color: #dfe9e4;
         }
 
         .paper-card h4 {
             font-size: 1.35rem;
             font-weight: 700;
-            color: #1c5d48;
             margin-bottom: 0.85rem;
             line-height: 1.3;
-            border-left: 4px solid #3abf95;
             padding-left: 0.75rem;
         }
 
@@ -208,8 +267,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #eff6f2;
-            color: #1d705b;
             font-weight: 700;
             font-size: 0.85rem;
             padding: 0.65rem 1.3rem;
@@ -217,15 +274,8 @@
             text-decoration: none;
             transition: 0.2s;
             width: fit-content;
-            border: 1px solid #d5e5dd;
+            border: 1px solid;
             letter-spacing: 0.3px;
-        }
-
-        .view-btn:hover {
-            background: #1e6f5c;
-            color: white;
-            border-color: #1e6f5c;
-            box-shadow: 0 4px 8px rgba(30,111,92,0.15);
         }
 
         /* Responsive */
@@ -267,7 +317,7 @@
             }
         }
 
-        /* Light decorative backdrop – very subtle texture, no darkness */
+        /* subtle light background pattern */
         body::before {
             content: "";
             position: fixed;
@@ -292,20 +342,6 @@
             letter-spacing: 0.2px;
             border-top: 1px solid #e2ede7;
             padding-top: 2rem;
-        }
-
-        /* FIX: ensure all text has strong contrast ratio */
-        .paper-card p, .competency-header p, .logo, nav ul li a {
-            text-rendering: optimizeLegibility;
-        }
-
-        /* additional readability boost */
-        .competency-header h3, .paper-card h4 {
-            font-weight: 750;
-        }
-
-        .view-btn {
-            font-weight: 650;
         }
     </style>
 </head>
@@ -332,8 +368,8 @@
 
         <div class="competency-container">
             
-            <!-- Competency 1: Leadership & Management -->
-            <section class="competency-section">
+            <!-- Competency 1: Leadership & Management - TEAL theme -->
+            <section class="competency-section comp-1">
                 <div class="competency-header">
                     <h3>⚡ Competency 1: Leadership & Management</h3>
                     <p>This competency reflects my ability to lead and manage in the public interest by applying ethical frameworks, promoting accountability, and shaping organizational culture.</p>
@@ -352,8 +388,8 @@
                 </div>
             </section>
 
-            <!-- Competency 2: Policy Process -->
-            <section class="competency-section">
+            <!-- Competency 2: Policy Process - AMBER/GOLD theme -->
+            <section class="competency-section comp-2">
                 <div class="competency-header">
                     <h3>📜 Competency 2: Policy Process</h3>
                     <p>This competency demonstrates my ability to understand, analyze, and contribute to the development and implementation of public policies.</p>
@@ -372,8 +408,8 @@
                 </div>
             </section>
 
-            <!-- Competency 3: Analysis, Critical Thinking, & Decision-Making -->
-            <section class="competency-section">
+            <!-- Competency 3: Analysis, Critical Thinking, & Decision-Making - PURPLE theme -->
+            <section class="competency-section comp-3">
                 <div class="competency-header">
                     <h3>🧠 Competency 3: Analysis, Critical Thinking, & Decision-Making</h3>
                     <p>Reflects my ability to evaluate complex issues, apply theoretical frameworks, and develop evidence-based solutions.</p>
@@ -392,8 +428,8 @@
                 </div>
             </section>
 
-            <!-- Competency 4: Public Service Perspective -->
-            <section class="competency-section">
+            <!-- Competency 4: Public Service Perspective - GREEN/SAGE theme -->
+            <section class="competency-section comp-4">
                 <div class="competency-header">
                     <h3>🤝 Competency 4: Public Service Perspective</h3>
                     <p>Highlights my understanding of public service values, including equity, accessibility, accountability, and community impact.</p>
@@ -412,8 +448,8 @@
                 </div>
             </section>
 
-            <!-- Competency 5: Communication & Interaction -->
-            <section class="competency-section">
+            <!-- Competency 5: Communication & Interaction - CORAL/ROSE theme -->
+            <section class="competency-section comp-5">
                 <div class="competency-header">
                     <h3>💬 Competency 5: Communication & Interaction</h3>
                     <p>Demonstrates my ability to communicate effectively through written, analytical, and interpersonal formats.</p>
@@ -432,7 +468,7 @@
                 </div>
             </section>
         </div>
-        <footer-note>✦ Each document demonstrates MPA core competencies through applied research and strategic insight ✦</footer-note>
+        <footer-note>✦ Each competency features a distinct palette — demonstrating range and clarity in public administration ✦</footer-note>
     </div>
 </body>
 </html>
