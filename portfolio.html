@@ -3,15 +3,306 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Shaniece Dillahunt</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Portfolio | Shaniece Dillahunt | MPA Core Competencies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #faf9f8;
+            color: #1e2a3e;
+            line-height: 1.5;
+        }
+
+        /* Navigation (replica from original style) */
+        nav {
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #0b2b40 0%, #1e4a6b 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: none;
+            color: #5f7f9e;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2c3e4e;
+            transition: 0.2s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            border-bottom-color: #1e6f5c;
+            color: #1e6f5c;
+        }
+
+        /* main container */
+        .container {
+            max-width: 1280px;
+            margin: 2.5rem auto;
+            padding: 0 2rem 3rem;
+        }
+
+        /* section title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(130deg, #1a3b4e, #2c6e5c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .institution {
+            font-family: 'Libre Baskerville', serif;
+            font-style: italic;
+            color: #4a627a;
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+        }
+
+        .underline {
+            height: 4px;
+            width: 70px;
+            background: #1e6f5c;
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* COMPETENCY SECTIONS - NEW GRID LAYOUT (no one-line flow) */
+        .competency-container {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .competency-section {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: all 0.2s;
+            border: 1px solid #edf2f4;
+        }
+
+        .competency-header {
+            background: #fefefe;
+            padding: 1.8rem 2rem 1.2rem 2rem;
+            border-bottom: 2px solid #eef2f5;
+        }
+
+        .competency-header h3 {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #0f3b2f;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.3px;
+            display: inline-block;
+            background: linear-gradient(120deg, #1c5d4e, #21604b);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .competency-header p {
+            color: #3e5a6c;
+            font-size: 0.98rem;
+            line-height: 1.5;
+            max-width: 90%;
+        }
+
+        /* PAPER GRID - beautiful responsive multi-column layout */
+        .paper-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            padding: 2rem;
+            background: #ffffff;
+        }
+
+        .paper-card {
+            background: #fafcff;
+            border-radius: 24px;
+            padding: 1.6rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            border: 1px solid #eef2f8;
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(2px);
+        }
+
+        .paper-card:hover {
+            transform: translateY(-6px);
+            border-color: #cbdde9;
+            box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.12);
+            background: white;
+        }
+
+        .paper-card h4 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1c4e42;
+            margin-bottom: 0.85rem;
+            line-height: 1.3;
+            border-left: 4px solid #2b9c7a;
+            padding-left: 0.75rem;
+        }
+
+        .paper-card p {
+            color: #2d4b65;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex: 1;
+            line-height: 1.5;
+        }
+
+        .view-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #edf4f0;
+            color: #1b6b58;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: 0.2s;
+            width: fit-content;
+            border: 1px solid #d4e2dc;
+            letter-spacing: 0.3px;
+        }
+
+        .view-btn:hover {
+            background: #1e6f5c;
+            color: white;
+            border-color: #1e6f5c;
+            box-shadow: 0 4px 10px rgba(30,111,92,0.2);
+        }
+
+        /* Responsive: for smaller screens, keep cards stacked but not one line */
+        @media (max-width: 780px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding: 0 1.2rem 2rem;
+            }
+            .competency-header p {
+                max-width: 100%;
+            }
+            .paper-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .competency-header {
+                padding: 1.2rem;
+            }
+            .competency-header h3 {
+                font-size: 1.4rem;
+            }
+            .paper-card {
+                padding: 1.2rem;
+            }
+        }
+
+        /* subtle background pattern */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#e7edf2 1px, transparent 1px);
+            background-size: 28px 28px;
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* additional flourish */
+        .portfolio-page .section-title {
+            position: relative;
+        }
+        footer-note {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #5f7f8c;
+        }
+    </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-           <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
+            <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
@@ -31,102 +322,107 @@
 
         <div class="competency-container">
             
+            <!-- Competency 1: Leadership & Management -->
             <section class="competency-section">
                 <div class="competency-header">
-                    <h3>Competency 1: Leadership & Management</h3>
+                    <h3>⚡ Competency 1: Leadership & Management</h3>
                     <p>This competency reflects my ability to lead and manage in the public interest by applying ethical frameworks, promoting accountability, and shaping organizational culture.</p>
                 </div>
                 <div class="paper-grid">
                     <div class="paper-card">
                         <h4>Appreciative Inquiry and Ethical Leadership</h4>
                         <p>Explores leadership through a strengths-based approach, focusing on building positive organizational culture and ethical decision-making.</p>
-                        <a href=sdillahunttopicpaperleadingbyexampleelevatingethicalstandardsintheworkplace.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahunttopicpaperleadingbyexampleelevatingethicalstandardsintheworkplace.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                     <div class="paper-card">
                         <h4>Ethical Leadership Interview Analysis</h4>
                         <p>Examines real-world leadership practices, highlighting how leadership styles influence organizational behavior and accountability.</p>
-                        <a href="sdillahunttopicpaperleadingbyexampleelevatingethicalstandardsintheworkplace.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahunttopicpaperleadingbyexampleelevatingethicalstandardsintheworkplace.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                 </div>
             </section>
 
+            <!-- Competency 2: Policy Process -->
             <section class="competency-section">
                 <div class="competency-header">
-                    <h3>Competency 2: Policy Process</h3>
+                    <h3>📜 Competency 2: Policy Process</h3>
                     <p>This competency demonstrates my ability to understand, analyze, and contribute to the development and implementation of public policies.</p>
                 </div>
                 <div class="paper-grid">
                     <div class="paper-card">
                         <h4>Federal Unions & Their Influence</h4>
                         <p>Analyzes the role of federal unions in shaping labor policy and influencing workplace conditions within the public sector.</p>
-                        <a href="sdillahuntfinalpaper121524.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahuntfinalpaper121524.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                     <div class="paper-card">
                         <h4>Preventing a Coverage Spiral</h4>
                         <p>Evaluates healthcare policy challenges and proposes strategies to stabilize insurance markets and reduce costs.</p>
-                        <a href="s.dillahunthealthsystems&policyfinal12222025.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="s.dillahunthealthsystems&policyfinal12222025.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                 </div>
             </section>
 
+            <!-- Competency 3: Analysis, Critical Thinking, & Decision-Making -->
             <section class="competency-section">
                 <div class="competency-header">
-                    <h3>Competency 3: Analysis, Critical Thinking, & Decision-Making</h3>
+                    <h3>🧠 Competency 3: Analysis, Critical Thinking, & Decision-Making</h3>
                     <p>Reflects my ability to evaluate complex issues, apply theoretical frameworks, and develop evidence-based solutions.</p>
                 </div>
                 <div class="paper-grid">
                     <div class="paper-card">
                         <h4>Organizational Analysis: USPS</h4>
                         <p>Applies organizational theories to identify operational problems and provide strategic recommendations for the USPS.</p>
-                        <a href="sdillahuntorganizationalanalysispaper12.10.24.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahuntorganizationalanalysispaper12.10.24.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                     <div class="paper-card">
                         <h4>Digital Transformation in Public Sector</h4>
                         <p>Examines how technological change impacts efficiency and service delivery within public organizations.</p>
-                        <a href="sdillahunthmoandposhealthplans.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahunthmoandposhealthplans.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                 </div>
             </section>
 
+            <!-- Competency 4: Public Service Perspective -->
             <section class="competency-section">
                 <div class="competency-header">
-                    <h3>Competency 4: Public Service Perspective</h3>
+                    <h3>🤝 Competency 4: Public Service Perspective</h3>
                     <p>Highlights my understanding of public service values, including equity, accessibility, accountability, and community impact.</p>
                 </div>
                 <div class="paper-grid">
                     <div class="paper-card">
                         <h4>COVID-19 Vaccination Campaign</h4>
                         <p>Analyzes large-scale public service initiatives emphasizing equitable access, public trust, and collaboration.</p>
-                        <a href="sdillahuntcurrenteventessay2.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahuntcurrenteventessay2.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                     <div class="paper-card">
                         <h4>NJDOL Virtual Assistant Project</h4>
                         <p>Evaluates how technology can improve public service delivery while maintaining accountability and accessibility.</p>
-                        <a href="sdillahuntfinalprojecttechpubadmin.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahuntfinalprojecttechpubadmin.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                 </div>
             </section>
 
+            <!-- Competency 5: Communication & Interaction -->
             <section class="competency-section">
                 <div class="competency-header">
-                    <h3>Competency 5: Communication & Interaction</h3>
+                    <h3>💬 Competency 5: Communication & Interaction</h3>
                     <p>Demonstrates my ability to communicate effectively through written, analytical, and interpersonal formats.</p>
                 </div>
                 <div class="paper-grid">
                     <div class="paper-card">
                         <h4>Ethical Leadership Interview Protocol</h4>
                         <p>Showcases the design of structured questions to guide meaningful conversations with diverse leadership perspectives.</p>
-                        <a href=sdillahuntappreciativeinquiryethicalleadershipinterview protocol.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahuntappreciativeinquiryethicalleadershipinterview%20protocol.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                     <div class="paper-card">
                         <h4>HMO vs. POS Health Plans Analysis</h4>
                         <p>Compares complex healthcare systems in an accessible format to support effective analytical decision-making.</p>
-                        <a href="sdillahunthmoandposhealthplans.pdf" target="_blank" class="view-btn">View Paper</a>
+                        <a href="sdillahunthmoandposhealthplans.pdf" target="_blank" class="view-btn">📄 View Paper</a>
                     </div>
                 </div>
             </section>
-
         </div>
+        <footer-note>✦ Each document demonstrates MPA core competencies through applied research and strategic insight ✦</footer-note>
     </div>
 </body>
 </html>
