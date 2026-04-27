@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Education & Experience | Shaniece Dillahunt</title>
+    <title>Resume | Shaniece Dillahunt | MPA Candidate</title>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -125,40 +125,17 @@
             padding: 0 2rem 3rem;
         }
 
-        /* Profile Image Styling - FULL RECTANGLE (not round) */
-        .profile-wrapper {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-        
-        .edu-profile-image {
-            width: 320px;
-            height: auto;
-            max-height: 380px;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 4px solid white;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .edu-profile-image:hover {
-            transform: scale(1.02);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Section Title */
+        /* Section Title with gradient colors */
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem;
         }
 
         .section-title h2 {
             font-size: 2.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(125deg, #1e5943, #236b53);
+            background: linear-gradient(125deg, #1e5943, #236b53, #2c9b7a);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -168,156 +145,243 @@
         .underline {
             height: 3px;
             width: 70px;
-            background: #2c9b7a;
+            background: linear-gradient(90deg, #2c9b7a, #7c3aed, #d97706);
             margin: 1rem auto 0;
             border-radius: 4px;
         }
 
-        /* Timeline / Education Items - DIFFERENT COLORS for each */
-        .timeline {
+        /* Resume Header Section - Multi-color text */
+        .cv-header-flex {
             display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
-            margin-bottom: 3rem;
-        }
-
-        /* Item 1 - MPA (Teal/Blue theme) */
-        .edu-item-1 {
+            gap: 2rem;
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
-            border-radius: 24px;
-            padding: 1.8rem;
-            border-left: 6px solid #2c7da0;
-            box-shadow: 0 8px 20px rgba(44, 125, 160, 0.1);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border-left: 6px solid #2c9b7a;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
-        .edu-item-1 .date { background: linear-gradient(135deg, #2c7da0, #1f5e7e); }
-        .edu-item-1 h3 { color: #1f5e7e; }
-        .edu-item-1:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.98); box-shadow: 0 12px 28px rgba(44, 125, 160, 0.2); }
-
-        /* Item 2 - Bachelor's (Purple/Plum theme) */
-        .edu-item-2 {
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(2px);
-            border-radius: 24px;
-            padding: 1.8rem;
-            border-left: 6px solid #7c3aed;
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        
+        .cv-header-flex:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.98);
         }
-        .edu-item-2 .date { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
-        .edu-item-2 h3 { color: #5b21b6; }
-        .edu-item-2:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.98); box-shadow: 0 12px 28px rgba(124, 58, 237, 0.2); }
 
-        /* Item 3 - Associate (Amber/Gold theme) */
-        .edu-item-3 {
-            background: rgba(255, 255, 255, 0.94);
-            backdrop-filter: blur(2px);
-            border-radius: 24px;
-            padding: 1.8rem;
-            border-left: 6px solid #d97706;
-            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+        .cv-icon {
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+            border-radius: 16px;
         }
-        .edu-item-3 .date { background: linear-gradient(135deg, #d97706, #b45f06); }
-        .edu-item-3 h3 { color: #b45f06; }
-        .edu-item-3:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.98); box-shadow: 0 12px 28px rgba(217, 119, 6, 0.2); }
 
-        /* Shared styles for all edu items */
-        .date {
-            display: inline-block;
-            color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
+        .cv-header-text h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e5a48, #2c7da0, #5b21b6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             margin-bottom: 1rem;
+        }
+
+        .cv-header-text p {
+            color: #3a5a6a;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .cv-header-text p strong {
+            color: #d97706;
+            font-weight: 700;
+        }
+
+        .download-instruction {
+            font-style: italic;
+            background: linear-gradient(135deg, rgba(44, 155, 122, 0.08), rgba(124, 58, 237, 0.08));
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            display: inline-block;
+            color: #7c3aed;
+            font-weight: 500;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #2c9b7a, #1e6f5c);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 155, 122, 0.3);
+            background: linear-gradient(135deg, #1e6f5c, #155a4a);
+        }
+
+        /* Stats Section - Different colors per card */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid;
+        }
+
+        .stat-card:nth-child(1) { border-bottom-color: #2c7da0; }
+        .stat-card:nth-child(2) { border-bottom-color: #7c3aed; }
+        .stat-card:nth-child(3) { border-bottom-color: #d97706; }
+        .stat-card:nth-child(4) { border-bottom-color: #e05a5a; }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.3rem;
+        }
+        .stat-card:nth-child(1) .stat-number { color: #2c7da0; }
+        .stat-card:nth-child(2) .stat-number { color: #7c3aed; }
+        .stat-card:nth-child(3) .stat-number { color: #d97706; }
+        .stat-card:nth-child(4) .stat-number { color: #e05a5a; }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #4a6a7a;
+            text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        .edu-item-1 h3, .edu-item-2 h3, .edu-item-3 h3 {
+        /* Skills Section - Colorful pills */
+        .skills-section {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(44, 155, 122, 0.2);
+        }
+
+        .skills-section h3 {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #1e5a48, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .school {
-            font-size: 1rem;
-            color: #4a6a7a;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
         }
 
-        .honor {
-            display: inline-block;
-            background: rgba(0, 0, 0, 0.05);
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
+        .skill-pill {
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
             font-weight: 600;
-            margin-top: 0.5rem;
-        }
-        .edu-item-1 .honor { background: rgba(44, 125, 160, 0.12); color: #1f5e7e; }
-        .edu-item-2 .honor { background: rgba(124, 58, 237, 0.12); color: #5b21b6; }
-        .edu-item-3 .honor { background: rgba(217, 119, 6, 0.12); color: #b45f06; }
-
-        /* Certificates Section - DIFFERENT COLORS */
-        .cert-section {
-            margin-top: 2rem;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            border: 1px solid;
         }
         
-        .cert-section h3 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #1e5a48;
-            margin-bottom: 1.5rem;
-            text-align: center;
+        .skill-pill:nth-child(1) { background: rgba(44, 125, 160, 0.12); color: #2c7da0; border-color: rgba(44, 125, 160, 0.3); }
+        .skill-pill:nth-child(2) { background: rgba(124, 58, 237, 0.12); color: #7c3aed; border-color: rgba(124, 58, 237, 0.3); }
+        .skill-pill:nth-child(3) { background: rgba(217, 119, 6, 0.12); color: #d97706; border-color: rgba(217, 119, 6, 0.3); }
+        .skill-pill:nth-child(4) { background: rgba(224, 90, 90, 0.12); color: #e05a5a; border-color: rgba(224, 90, 90, 0.3); }
+        .skill-pill:nth-child(5) { background: rgba(44, 155, 122, 0.12); color: #2c9b7a; border-color: rgba(44, 155, 122, 0.3); }
+        .skill-pill:nth-child(6) { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; border-color: rgba(139, 92, 246, 0.3); }
+        .skill-pill:nth-child(7) { background: rgba(245, 158, 11, 0.12); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); }
+        .skill-pill:nth-child(8) { background: rgba(236, 72, 153, 0.12); color: #ec4899; border-color: rgba(236, 72, 153, 0.3); }
+        .skill-pill:nth-child(9) { background: rgba(6, 182, 212, 0.12); color: #06b6d4; border-color: rgba(6, 182, 212, 0.3); }
+        .skill-pill:nth-child(10) { background: rgba(168, 85, 247, 0.12); color: #a855f7; border-color: rgba(168, 85, 247, 0.3); }
+        
+        .skill-pill:hover {
+            transform: scale(1.03);
+            filter: brightness(0.95);
         }
 
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-        }
-
-        /* Certificate cards with different colors */
-        .cert-card-1 { background: linear-gradient(135deg, rgba(44, 125, 160, 0.12), rgba(44, 125, 160, 0.05)); border-left: 4px solid #2c7da0; }
-        .cert-card-2 { background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(124, 58, 237, 0.05)); border-left: 4px solid #7c3aed; }
-        .cert-card-3 { background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(217, 119, 6, 0.05)); border-left: 4px solid #d97706; }
-        .cert-card-4 { background: linear-gradient(135deg, rgba(44, 155, 122, 0.12), rgba(44, 155, 122, 0.05)); border-left: 4px solid #2c9b7a; }
-
-        .cert-card-1, .cert-card-2, .cert-card-3, .cert-card-4 {
+        /* Interactive Viewer Section */
+        .viewer-section {
+            background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
-            border-radius: 20px;
-            padding: 1.2rem 1.5rem;
-            text-align: center;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            border-radius: 28px;
+            padding: 2rem;
+            margin-top: 1rem;
+            border: 1px solid rgba(44, 155, 122, 0.2);
+        }
+
+        .viewer-section .section-title {
+            margin-bottom: 1.5rem;
+        }
+
+        .viewer-section .section-title h2 {
+            font-size: 1.6rem;
+            background: linear-gradient(125deg, #7c3aed, #d97706, #2c9b7a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
         }
         
-        .cert-card-1 { color: #1f5e7e; }
-        .cert-card-2 { color: #5b21b6; }
-        .cert-card-3 { color: #b45f06; }
-        .cert-card-4 { color: #1e6f5c; }
-        
-        .cert-card-1::before { content: '📋'; margin-right: 8px; }
-        .cert-card-2::before { content: '🏅'; margin-right: 8px; }
-        .cert-card-3::before { content: '📘'; margin-right: 8px; }
-        .cert-card-4::before { content: '⭐'; margin-right: 8px; }
-        
-        .cert-card-1:hover { transform: translateY(-5px); background: rgba(44, 125, 160, 0.2); box-shadow: 0 10px 25px rgba(44, 125, 160, 0.2); }
-        .cert-card-2:hover { transform: translateY(-5px); background: rgba(124, 58, 237, 0.2); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2); }
-        .cert-card-3:hover { transform: translateY(-5px); background: rgba(217, 119, 6, 0.2); box-shadow: 0 10px 25px rgba(217, 119, 6, 0.2); }
-        .cert-card-4:hover { transform: translateY(-5px); background: rgba(44, 155, 122, 0.2); box-shadow: 0 10px 25px rgba(44, 155, 122, 0.2); }
+        .viewer-section .section-title p {
+            color: #e05a5a;
+            font-weight: 500;
+        }
 
-        /* Responsive Design */
+        .resume-iframe {
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+
+        /* Footer */
+        footer-note {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            background: linear-gradient(135deg, #5a7a6a, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            border-top: 1px solid rgba(120, 150, 135, 0.3);
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
         @media (max-width: 780px) {
             .nav-container {
                 flex-direction: column;
@@ -334,37 +398,38 @@
             .section-title h2 {
                 font-size: 2rem;
             }
-            .edu-item-1 h3, .edu-item-2 h3, .edu-item-3 h3 {
-                font-size: 1.3rem;
+            .cv-header-flex {
+                flex-direction: column;
+                text-align: center;
             }
-            .edu-profile-image {
-                width: 280px;
+            .cv-icon {
+                margin: 0 auto;
+            }
+            .btn-main {
+                display: inline-block;
+            }
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 480px) {
-            .edu-item-1, .edu-item-2, .edu-item-3 {
+            .cv-header-flex {
                 padding: 1.2rem;
             }
-            .cert-card-1, .cert-card-2, .cert-card-3, .cert-card-4 {
-                padding: 1rem;
-                font-size: 0.9rem;
+            .cv-header-text h3 {
+                font-size: 1.4rem;
             }
-            .edu-profile-image {
-                width: 100%;
-                max-width: 280px;
+            .stats-section {
+                grid-template-columns: 1fr;
             }
-        }
-
-        footer-note {
-            display: block;
-            text-align: center;
-            margin-top: 3rem;
-            font-size: 0.8rem;
-            color: #5a7a6a;
-            font-weight: 500;
-            border-top: 1px solid rgba(120, 150, 135, 0.3);
-            padding-top: 2rem;
+            .skills-grid {
+                gap: 0.6rem;
+            }
+            .skill-pill {
+                font-size: 0.75rem;
+                padding: 0.4rem 1rem;
+            }
         }
     </style>
 </head>
@@ -375,62 +440,88 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
-                <li><a href="education.html" class="active">Education</a></li>
-                <li><a href="resume.html">My Resume</a></li>
+                <li><a href="education.html">Education</a></li>
                 <li><a href="portfolio.html">My Portfolio</a></li>
+                <li><a href="resume.html" class="active">My Resume</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="container education-page">
-        <!-- Profile Image Section - FULL RECTANGLE (not round) -->
-        <div class="profile-wrapper">
-            <img src="image.png" alt="Shaniece Dillahunt" class="edu-profile-image" onerror="this.src='https://via.placeholder.com/320x380?text=Shaniece+Dillahunt'">
-        </div>
-        
+    <div class="container resume-page">
         <div class="section-title">
-            <h2>Professional Experience</h2>
+            <h2>📄 Professional Resume</h2>
             <div class="underline"></div>
         </div>
 
-        <div class="timeline">
-            <!-- Item 1: MPA - Teal/Blue theme -->
-            <div class="edu-item-1">
-                <span class="date">Expected May 2026</span>
-                <h3>Master of Public Administration (MPA)</h3>
-                <p class="school">Rutgers University–Newark</p>
-            </div>
-            
-            <!-- Item 2: Bachelor's - Purple theme -->
-            <div class="edu-item-2">
-                <span class="date">May 2025</span>
-                <h3>Bachelor of Arts – Public Affairs and Administration</h3>
-                <p class="school">Rutgers University–Newark | <em>Magna Cum Laude</em></p>
-                <p class="honor">🏆 Inducted into Pi Alpha Alpha Honor Society</p>
-            </div>
-            
-            <!-- Item 3: Associate - Amber/Gold theme -->
-            <div class="edu-item-3">
-                <span class="date">May 2023</span>
-                <h3>Associate of Science – Business Administration</h3>
-                <p class="school">Passaic County Community College</p>
-                <p class="honor">⭐ Inducted into NSLS (National Society of Leadership and Success)</p>
+        <!-- Enhanced Header Section with Multi-color text -->
+        <div class="cv-header-flex">
+            <img src="cv.jpg" alt="Resume Icon" class="cv-icon" onerror="this.src='https://via.placeholder.com/100x120?text=CV'">
+            <div class="cv-header-text">
+                <h3>✨ Shaniece L. Dillahunt, MPA Candidate</h3>
+                <p>
+                    As a dedicated <strong style="color:#2c7da0;">public administration professional</strong> and a <strong style="color:#7c3aed;">Master of Public Administration</strong> candidate at Rutgers University–Newark, 
+                    I bring a unique blend of <strong style="color:#d97706;">higher education management</strong> and <strong style="color:#e05a5a;">healthcare service expertise</strong>. 
+                    My professional trajectory reflects strategic leadership, policy analysis, and a deep commitment to ethical public service.
+                </p>
+                <p class="download-instruction">
+                    📌 Download the official PDF version for a complete overview of my professional history, academic honors, and specialized certifications.
+                </p>
+                <a href="Shaniece_Dillahunt_CV.pdf" target="_blank" class="btn-main">📎 Download Full Resume (PDF)</a>
             </div>
         </div>
 
-        <div class="cert-section">
-            <h3>📜 Professional Certificates</h3>
-            <div class="cert-grid">
-                <div class="cert-card-1">Healthcare Administration</div>
-                <div class="cert-card-2">Leadership and No-Blame Problem Solving for Rutgers Faculty & Staff</div>
-                <div class="cert-card-3">CITI Program Certification</div>
-                <div class="cert-card-4">Leadership of Public Organizations</div>
+        <!-- Quick Stats / Achievements - Color-coded -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <div class="stat-number">5+ Years</div>
+                <div class="stat-label">Professional Experience</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">MPA '26</div>
+                <div class="stat-label">Rutgers University</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">Magna Cum Laude</div>
+                <div class="stat-label">BA in Public Affairs</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">Certifications</div>
             </div>
         </div>
+
+        <!-- Core Competencies / Skills Section - Rainbow color pills -->
+        <div class="skills-section">
+            <h3>✨ Core Competencies & Expertise</h3>
+            <div class="skills-grid">
+                <span class="skill-pill">Public Policy Analysis</span>
+                <span class="skill-pill">Ethical Leadership</span>
+                <span class="skill-pill">Strategic Management</span>
+                <span class="skill-pill">Organizational Development</span>
+                <span class="skill-pill">Healthcare Administration</span>
+                <span class="skill-pill">Data-Driven Decision Making</span>
+                <span class="skill-pill">Stakeholder Engagement</span>
+                <span class="skill-pill">Program Evaluation</span>
+                <span class="skill-pill">Public Finance</span>
+                <span class="skill-pill">Diversity & Inclusion</span>
+            </div>
+        </div>
+
+        <!-- Interactive PDF Viewer -->
+        <div class="viewer-section">
+            <div class="section-title">
+                <h2>🔍 Interactive Resume Viewer</h2>
+                <div class="underline" style="width: 50px;"></div>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">📄 Scroll through the document below or download for the full experience</p>
+            </div>
+            <iframe src="Shaniece_Dillahunt_CV.pdf" width="100%" height="750px" class="resume-iframe" title="Shaniece Dillahunt Resume">
+                <p>Your browser doesn't support embedded PDFs. <a href="Shaniece_Dillahunt_CV.pdf">Download the resume instead.</a></p>
+            </iframe>
+        </div>
     </div>
-    
+
     <footer-note>
-        ✦ Commitment to excellence in public service and leadership ✦
+        ✦ Public service leadership · Policy innovation · Strategic impact ✦
     </footer-note>
 </body>
 </html>
