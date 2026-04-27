@@ -135,7 +135,7 @@
             font-size: 2.6rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(125deg, #1e5943, #236b53);
+            background: linear-gradient(125deg, #1e5943, #236b53, #2c9b7a);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
@@ -145,12 +145,12 @@
         .underline {
             height: 3px;
             width: 70px;
-            background: #2c9b7a;
+            background: linear-gradient(90deg, #2c9b7a, #7c3aed, #d97706);
             margin: 1rem auto 0;
             border-radius: 4px;
         }
 
-        /* Resume Header Section - Enhanced */
+        /* Resume Header Section */
         .cv-header-flex {
             display: flex;
             gap: 2rem;
@@ -180,7 +180,10 @@
         .cv-header-text h3 {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #1e5a48;
+            background: linear-gradient(135deg, #1e5a48, #2c7da0, #5b21b6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             margin-bottom: 1rem;
         }
 
@@ -189,13 +192,20 @@
             margin-bottom: 1rem;
             line-height: 1.6;
         }
+        
+        .cv-header-text p strong {
+            color: #d97706;
+            font-weight: 700;
+        }
 
         .download-instruction {
             font-style: italic;
-            background: rgba(44, 155, 122, 0.08);
+            background: linear-gradient(135deg, rgba(44, 155, 122, 0.08), rgba(124, 58, 237, 0.08));
             padding: 0.5rem 1rem;
             border-radius: 12px;
             display: inline-block;
+            color: #7c3aed;
+            font-weight: 500;
         }
 
         .btn-main {
@@ -221,7 +231,7 @@
             background: linear-gradient(135deg, #1e6f5c, #155a4a);
         }
 
-        /* Quick Stats / Highlights Section - NEW (fills emptiness) */
+        /* Stats Section - CORRECTED NUMBERS */
         .stats-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -268,7 +278,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* Skills Pills Section - NEW (adds visual richness) */
+        /* Skills Section */
         .skills-section {
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
@@ -281,7 +291,10 @@
         .skills-section h3 {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #1e5a48;
+            background: linear-gradient(135deg, #1e5a48, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
             margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
@@ -295,22 +308,31 @@
         }
 
         .skill-pill {
-            background: linear-gradient(135deg, rgba(44, 155, 122, 0.12), rgba(44, 155, 122, 0.05));
-            color: #1e6f5c;
             padding: 0.5rem 1.2rem;
             border-radius: 40px;
             font-weight: 600;
             font-size: 0.85rem;
             transition: all 0.2s ease;
-            border: 1px solid rgba(44, 155, 122, 0.3);
+            border: 1px solid;
         }
+        
+        .skill-pill:nth-child(1) { background: rgba(44, 125, 160, 0.12); color: #2c7da0; border-color: rgba(44, 125, 160, 0.3); }
+        .skill-pill:nth-child(2) { background: rgba(124, 58, 237, 0.12); color: #7c3aed; border-color: rgba(124, 58, 237, 0.3); }
+        .skill-pill:nth-child(3) { background: rgba(217, 119, 6, 0.12); color: #d97706; border-color: rgba(217, 119, 6, 0.3); }
+        .skill-pill:nth-child(4) { background: rgba(224, 90, 90, 0.12); color: #e05a5a; border-color: rgba(224, 90, 90, 0.3); }
+        .skill-pill:nth-child(5) { background: rgba(44, 155, 122, 0.12); color: #2c9b7a; border-color: rgba(44, 155, 122, 0.3); }
+        .skill-pill:nth-child(6) { background: rgba(139, 92, 246, 0.12); color: #8b5cf6; border-color: rgba(139, 92, 246, 0.3); }
+        .skill-pill:nth-child(7) { background: rgba(245, 158, 11, 0.12); color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); }
+        .skill-pill:nth-child(8) { background: rgba(236, 72, 153, 0.12); color: #ec4899; border-color: rgba(236, 72, 153, 0.3); }
+        .skill-pill:nth-child(9) { background: rgba(6, 182, 212, 0.12); color: #06b6d4; border-color: rgba(6, 182, 212, 0.3); }
+        .skill-pill:nth-child(10) { background: rgba(168, 85, 247, 0.12); color: #a855f7; border-color: rgba(168, 85, 247, 0.3); }
+        
         .skill-pill:hover {
             transform: scale(1.03);
-            background: rgba(44, 155, 122, 0.2);
-            border-color: #2c9b7a;
+            filter: brightness(0.95);
         }
 
-        /* Interactive Viewer Section - Enhanced */
+        /* Interactive Viewer Section */
         .viewer-section {
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
@@ -326,12 +348,15 @@
 
         .viewer-section .section-title h2 {
             font-size: 1.6rem;
-            background: none;
-            color: #1e5a48;
-            background: linear-gradient(125deg, #1e5943, #236b53);
+            background: linear-gradient(125deg, #7c3aed, #d97706, #2c9b7a);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
+        }
+        
+        .viewer-section .section-title p {
+            color: #e05a5a;
+            font-weight: 500;
         }
 
         .resume-iframe {
@@ -347,8 +372,11 @@
             text-align: center;
             margin-top: 3rem;
             font-size: 0.8rem;
-            color: #5a7a6a;
-            font-weight: 500;
+            background: linear-gradient(135deg, #5a7a6a, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
             border-top: 1px solid rgba(120, 150, 135, 0.3);
             padding-top: 2rem;
         }
@@ -425,15 +453,19 @@
             <div class="underline"></div>
         </div>
 
-        <!-- Enhanced Header Section -->
+        <!-- Header Section with CORRECT information -->
         <div class="cv-header-flex">
             <img src="cv.jpg" alt="Resume Icon" class="cv-icon" onerror="this.src='https://via.placeholder.com/100x120?text=CV'">
             <div class="cv-header-text">
-                <h3>Shaniece L. Dillahunt, MPA Candidate</h3>
+                <h3>✨ Shaniece L. Dillahunt, MPA Candidate</h3>
                 <p>
-                    As a dedicated public administration professional and a <strong>Master of Public Administration</strong> candidate at Rutgers University–Newark, 
-                    I bring a unique blend of higher education management and healthcare service expertise. My professional trajectory reflects 
-                    strategic leadership, policy analysis, and a deep commitment to ethical public service.
+                    As a dedicated <strong style="color:#2c7da0;">public administration professional</strong> with over <strong style="color:#e05a5a;">10+ years at Rutgers University</strong>, 
+                    I am currently pursuing a <strong style="color:#7c3aed;">Master of Public Administration (MPA) in Public Administration</strong> at Rutgers University–Newark. 
+                    I also hold a <strong style="color:#d97706;">Bachelor of Arts in Public Affairs and Administration</strong>, graduating <strong>Magna Cum Laude</strong>.
+                </p>
+                <p>
+                    My extensive experience in <strong style="color:#2c7da0;">higher education management</strong> and <strong style="color:#d97706;">healthcare administration</strong> has equipped me with 
+                    strategic leadership skills, policy analysis expertise, and a deep commitment to ethical public service and organizational excellence.
                 </p>
                 <p class="download-instruction">
                     📌 Download the official PDF version for a complete overview of my professional history, academic honors, and specialized certifications.
@@ -442,15 +474,15 @@
             </div>
         </div>
 
-        <!-- Quick Stats / Achievements - Fills empty space beautifully -->
+        <!-- Quick Stats / Achievements - CORRECTED NUMBERS -->
         <div class="stats-section">
             <div class="stat-card">
-                <div class="stat-number">5+</div>
-                <div class="stat-label">Years of Experience</div>
+                <div class="stat-number">10+ Years</div>
+                <div class="stat-label">at Rutgers University</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">MPA</div>
-                <div class="stat-label">In Progress (2026)</div>
+                <div class="stat-number">MPA '26</div>
+                <div class="stat-label">Public Administration</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">Magna Cum Laude</div>
@@ -458,11 +490,11 @@
             </div>
             <div class="stat-card">
                 <div class="stat-number">4+</div>
-                <div class="stat-label">Professional Certifications</div>
+                <div class="stat-label">Certifications</div>
             </div>
         </div>
 
-        <!-- Core Competencies / Skills Section - Adds professional depth -->
+        <!-- Core Competencies / Skills Section -->
         <div class="skills-section">
             <h3>✨ Core Competencies & Expertise</h3>
             <div class="skills-grid">
@@ -476,6 +508,8 @@
                 <span class="skill-pill">Program Evaluation</span>
                 <span class="skill-pill">Public Finance</span>
                 <span class="skill-pill">Diversity & Inclusion</span>
+                <span class="skill-pill">Higher Ed Management</span>
+                <span class="skill-pill">Change Management</span>
             </div>
         </div>
 
@@ -484,7 +518,7 @@
             <div class="section-title">
                 <h2>🔍 Interactive Resume Viewer</h2>
                 <div class="underline" style="width: 50px;"></div>
-                <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #5a7a6a;">Scroll through the document below or download for the full experience</p>
+                <p style="margin-top: 0.5rem; font-size: 0.85rem;">📄 Scroll through the document below or download for the full experience</p>
             </div>
             <iframe src="Shaniece_Dillahunt_CV.pdf" width="100%" height="750px" class="resume-iframe" title="Shaniece Dillahunt Resume">
                 <p>Your browser doesn't support embedded PDFs. <a href="Shaniece_Dillahunt_CV.pdf">Download the resume instead.</a></p>
@@ -493,7 +527,7 @@
     </div>
 
     <footer-note>
-        ✦ Public service leadership · Policy innovation · Strategic impact ✦
+        ✦ 10+ years at Rutgers · MPA in Public Administration · BA in Public Affairs & Administration ✦
     </footer-note>
 </body>
 </html>
