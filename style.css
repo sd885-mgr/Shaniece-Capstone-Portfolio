@@ -1,128 +1,126 @@
-/* ROOT VARIABLES FOR CONSISTENCY */
+/* =========================================
+   NEW DESIGN: ELEGANT DYNAMISM
+   ========================================= */
 :root {
-    --gold: #D4AF37;
-    --glass: rgba(255, 255, 255, 0.05);
-    --border: rgba(255, 255, 255, 0.15);
-    --bg-dark: #0f1215;
+    --primary-gold: #C5A028;
+    --soft-white: #f4f4f4;
+    /* Instead of pure black, use a deep, rich charcoal gradient */
+    --deep-bg: linear-gradient(135deg, #1a1c20 0%, #0f1013 100%);
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-hover: rgba(255, 255, 255, 0.07);
 }
 
 body {
-    margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-dark);
-    color: white;
+    background: var(--deep-bg); /* Much softer than flat black */
+    color: var(--soft-white);
+    min-height: 100vh;
+    /* This ensures that the page grows as you add more items */
+    display: block; 
 }
 
-/* BACKGROUND & OVERLAY */
+/* 1. Fix the "Disgusting" Background */
 .portfolio-bg {
-    background: url('portfolio-bg.jpg') no-repeat center center fixed;
+    background-image: url('your-background.jpg'); /* Use a subtle architectural photo */
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+/* This layer softens the image and adds professional depth */
 .overlay {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 16, 19, 0.85); 
     z-index: 0;
 }
 
-/* NAVIGATION ENHANCEMENT */
-nav {
-    position: fixed;
-    top: 0; width: 100%; z-index: 1000;
-    padding: 20px 0;
-    background: rgba(15, 18, 21, 0.8);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid var(--border);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
-}
-
-.logo { font-weight: 800; font-size: 1.2rem; }
-.logo span { color: var(--gold); font-size: 0.8rem; }
-
-nav ul { display: flex; list-style: none; gap: 30px; }
-nav ul li a { color: rgba(255,255,255,0.7); text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-nav ul li a.active, nav ul li a:hover { color: var(--gold); }
-
-/* MAIN CONTENT */
-.container {
+/* 2. Fix the Visibility of Many Items */
+.container.portfolio-page {
     position: relative;
     z-index: 1;
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 140px 20px 60px;
+    padding: 150px 20px 100px; /* Large top padding for the nav */
+    display: flex;
+    flex-direction: column;
 }
 
-.section-title h2 {
-    font-family: 'Libre Baskerville', serif;
-    font-size: 2.8rem;
-    margin-bottom: 5px;
-    text-align: center;
-}
-
-.subtitle { text-align: center; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem; margin-bottom: 20px; }
-
-.underline { width: 80px; height: 3px; background: var(--gold); margin: 0 auto 50px; }
-
-/* THE CARDS */
-.competency-grid {
+/* 3. The Grid Layout (Organizes many items beautifully) */
+.competency-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr; /* Stacked sections */
+    gap: 50px;
+    width: 100%;
 }
 
-.competency-card {
-    background: var(--glass);
-    border: 1px solid var(--border);
-    backdrop-filter: blur(20px);
+.competency-section {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: 40px;
-    transition: transform 0.4s ease;
-}
-
-.competency-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--gold);
+    backdrop-filter: blur(10px);
 }
 
 .competency-header h3 {
-    color: var(--gold);
-    font-size: 1.4rem;
+    font-family: 'Libre Baskerville', serif;
+    color: var(--primary-gold);
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(197, 160, 40, 0.3);
+    padding-bottom: 10px;
+}
+
+/* 4. Individual Paper Cards */
+.paper-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.paper-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 3px solid var(--primary-gold);
+    padding: 25px;
+    border-radius: 0 15px 15px 0;
+    transition: 0.4s ease;
+}
+
+.paper-card:hover {
+    background: var(--card-hover);
+    transform: translateX(10px); /* Subtle slide effect on hover */
+}
+
+.paper-card h4 {
+    color: #fff;
     margin-bottom: 10px;
+    font-size: 1.1rem;
 }
 
-.competency-header p {
+.paper-card p {
     font-size: 0.9rem;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
 }
 
-/* VIEW BUTTONS */
-.paper-item {
-    padding: 15px 0;
-    border-top: 1px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.paper-item h4 { margin: 0; font-weight: 400; font-size: 1rem; color: #eee; }
-
+/* The "View Paper" link styled as a sleek button */
 .view-btn {
     text-decoration: none;
-    color: var(--gold);
+    color: var(--primary-gold);
     font-weight: 700;
     font-size: 0.8rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    border: 1px solid var(--primary-gold);
+    padding: 8px 15px;
+    border-radius: 5px;
     transition: 0.3s;
 }
 
-.view-btn span { font-size: 1.2rem; transition: 0.3s; display: inline-block; }
-.view-btn:hover span { transform: translateX(5px); }
+.view-btn:hover {
+    background: var(--primary-gold);
+    color: #000;
+}
