@@ -1,76 +1,262 @@
-/* BACKGROUND FOR RESUME */
-.resume-bg {
-    background: url('resume-background.jpg') no-repeat center center fixed;
+/* =========================================
+   1. CORE BRANDING & TYPOGRAPHY
+   ========================================= */
+:root {
+    --gold: #D4AF37;        /* Classic Metallic Gold */
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --glass: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --dark-bg: #0a0a0a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: #f8f9fa;
+    background-color: var(--dark-bg);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. DYNAMIC BACKGROUNDS
+   ========================================= */
+.home-bg, .about-bg, .education-bg, .portfolio-bg, .resume-bg {
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
-.resume-page {
-    padding-top: 120px;
-    max-width: 900px;
+/* Replace these with your high-res image paths */
+.home-bg      { background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('home-bg.jpg'); }
+.about-bg     { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('about-bg.jpg'); }
+.education-bg { background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('edu-bg.jpg'); }
+.portfolio-bg { background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('portfolio-bg.jpg'); }
+.resume-bg    { background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('resume-bg.jpg'); }
+
+/* =========================================
+   3. LUXURY NAVIGATION
+   ========================================= */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 20px 0;
+}
+
+.nav-container {
+    max-width: 1200px;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-/* Updated CV Header with Glass Effect */
-.cv-header-flex {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 30px;
-    background: rgba(255, 255, 255, 0.95); /* Nearly solid for text readability */
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: #fff;
+}
+
+.logo span {
+    color: var(--gold);
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    font-size: 0.95rem;
+    position: relative;
+    padding: 5px 0;
+    transition: 0.4s ease;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+/* The Animated Link Underline */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: 0.4s ease;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+nav ul li a:hover::after, 
+nav ul li a.active::after {
+    width: 100%;
+}
+
+nav ul li a.active {
+    color: var(--gold);
+}
+
+/* =========================================
+   4. CONTENT CONTAINERS
+   ========================================= */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 160px 5% 100px;
+    position: relative;
+}
+
+/* Frosted Glass Card Effect */
+.content-card, .edu-item, .competency-section, .cv-header-flex {
+    background: var(--glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 50px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
     margin-bottom: 40px;
-    color: #222;
 }
 
-.cv-icon {
-    width: 100px;
-    height: auto;
-    border-radius: 8px;
-}
-
-.cv-header-text h3 {
-    margin: 0 0 10px 0;
-    color: #004080;
-    font-size: 1.4rem;
-}
-
-.cv-header-text p {
-    font-size: 1rem;
-    line-height: 1.6;
+/* Titles */
+.section-title h2 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3rem;
+    font-weight: 400;
     margin-bottom: 15px;
+    background: linear-gradient(to right, #fff, var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.download-instruction {
-    font-size: 0.9rem;
-    color: #666;
-    font-style: italic;
+.underline {
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin: 0 auto 50px;
+    border-radius: 2px;
 }
 
-.small-btn {
-    padding: 10px 20px !important;
-    font-size: 0.85rem !important;
-    margin-top: 10px;
+/* =========================================
+   5. BUTTONS & INTERACTIVE LINKS
+   ========================================= */
+.btn-main {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    padding: 16px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 20px var(--gold-glow);
 }
 
-/* Iframe Styling */
-.resume-iframe {
-    border: none;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-radius: 10px;
+.btn-main:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px var(--gold-glow);
     background: #fff;
 }
 
-.viewer-section {
-    margin-bottom: 60px;
+.view-btn {
+    text-decoration: none;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s;
 }
 
-/* Responsiveness for the flex header */
-@media (max-width: 600px) {
-    .cv-header-flex {
-        flex-direction: column;
-        text-align: center;
-    }
+.view-btn:hover {
+    gap: 15px;
+    text-shadow: 0 0 10px var(--gold-glow);
+}
+
+/* =========================================
+   6. PAGE-SPECIFIC ENHANCEMENTS
+   ========================================= */
+
+/* Hero Section (Home) */
+.hero-image {
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 6px solid var(--glass-border);
+    box-shadow: 0 0 40px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+}
+
+.pill {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--glass-border);
+    padding: 8px 20px;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Portfolio Cards */
+.paper-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--glass-border);
+    padding: 30px;
+    border-radius: 18px;
+    transition: 0.4s;
+}
+
+.paper-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: var(--gold);
+    transform: scale(1.02);
+}
+
+/* Resume/CV Header */
+.cv-header-flex {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    color: #fff;
+}
+
+.cv-icon {
+    width: 120px;
+    filter: drop-shadow(0 0 10px var(--gold-glow));
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .section-title h2 { font-size: 2.2rem; }
+    .cv-header-flex { flex-direction: column; text-align: center; }
+    nav ul { display: none; } /* Consider adding a hamburger menu later */
 }
