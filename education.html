@@ -125,7 +125,7 @@
             padding: 0 2rem 3rem;
         }
 
-        /* Profile Image Styling - ENLARGED VERSION */
+        /* Profile Image Styling - FULL RECTANGLE (not round) */
         .profile-wrapper {
             display: flex;
             justify-content: center;
@@ -133,17 +133,18 @@
         }
         
         .edu-profile-image {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
+            width: 320px;
+            height: auto;
+            max-height: 380px;
             object-fit: cover;
-            border: 5px solid white;
+            border-radius: 16px;
+            border: 4px solid white;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         
         .edu-profile-image:hover {
-            transform: scale(1.03);
+            transform: scale(1.02);
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
 
@@ -172,7 +173,7 @@
             border-radius: 4px;
         }
 
-        /* Timeline / Education Items - Professional Experience Styling */
+        /* Timeline / Education Items - DIFFERENT COLORS for each */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -180,43 +181,57 @@
             margin-bottom: 3rem;
         }
 
-        .edu-item {
+        /* Item 1 - MPA (Teal/Blue theme) */
+        .edu-item-1 {
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
             border-radius: 24px;
             padding: 1.8rem;
-            border-left: 6px solid #2c9b7a;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            border-left: 6px solid #2c7da0;
+            box-shadow: 0 8px 20px rgba(44, 125, 160, 0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
-        
-        .edu-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #2c9b7a, #6bc6a8, #2c9b7a);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .edu-item:hover {
-            transform: translateX(8px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-            background: rgba(255, 255, 255, 0.98);
-        }
-        
-        .edu-item:hover::before {
-            opacity: 1;
-        }
+        .edu-item-1 .date { background: linear-gradient(135deg, #2c7da0, #1f5e7e); }
+        .edu-item-1 h3 { color: #1f5e7e; }
+        .edu-item-1:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.98); box-shadow: 0 12px 28px rgba(44, 125, 160, 0.2); }
 
+        /* Item 2 - Bachelor's (Purple/Plum theme) */
+        .edu-item-2 {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border-left: 6px solid #7c3aed;
+            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .edu-item-2 .date { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+        .edu-item-2 h3 { color: #5b21b6; }
+        .edu-item-2:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.98); box-shadow: 0 12px 28px rgba(124, 58, 237, 0.2); }
+
+        /* Item 3 - Associate (Amber/Gold theme) */
+        .edu-item-3 {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border-left: 6px solid #d97706;
+            box-shadow: 0 8px 20px rgba(217, 119, 6, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .edu-item-3 .date { background: linear-gradient(135deg, #d97706, #b45f06); }
+        .edu-item-3 h3 { color: #b45f06; }
+        .edu-item-3:hover { transform: translateX(8px); background: rgba(255, 255, 255, 0.98); box-shadow: 0 12px 28px rgba(217, 119, 6, 0.2); }
+
+        /* Shared styles for all edu items */
         .date {
             display: inline-block;
-            background: linear-gradient(135deg, #2c9b7a, #236b53);
             color: white;
             padding: 0.3rem 1rem;
             border-radius: 20px;
@@ -226,10 +241,9 @@
             letter-spacing: 0.5px;
         }
 
-        .edu-item h3 {
+        .edu-item-1 h3, .edu-item-2 h3, .edu-item-3 h3 {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #1e5a48;
             margin-bottom: 0.5rem;
         }
 
@@ -242,16 +256,18 @@
 
         .honor {
             display: inline-block;
-            background: rgba(44, 155, 122, 0.12);
-            color: #1e6f5c;
+            background: rgba(0, 0, 0, 0.05);
             padding: 0.3rem 1rem;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 600;
             margin-top: 0.5rem;
         }
+        .edu-item-1 .honor { background: rgba(44, 125, 160, 0.12); color: #1f5e7e; }
+        .edu-item-2 .honor { background: rgba(124, 58, 237, 0.12); color: #5b21b6; }
+        .edu-item-3 .honor { background: rgba(217, 119, 6, 0.12); color: #b45f06; }
 
-        /* Certificates Section */
+        /* Certificates Section - DIFFERENT COLORS */
         .cert-section {
             margin-top: 2rem;
         }
@@ -270,33 +286,36 @@
             gap: 1.5rem;
         }
 
-        .cert-card {
-            background: rgba(255, 255, 255, 0.94);
+        /* Certificate cards with different colors */
+        .cert-card-1 { background: linear-gradient(135deg, rgba(44, 125, 160, 0.12), rgba(44, 125, 160, 0.05)); border-left: 4px solid #2c7da0; }
+        .cert-card-2 { background: linear-gradient(135deg, rgba(124, 58, 237, 0.12), rgba(124, 58, 237, 0.05)); border-left: 4px solid #7c3aed; }
+        .cert-card-3 { background: linear-gradient(135deg, rgba(217, 119, 6, 0.12), rgba(217, 119, 6, 0.05)); border-left: 4px solid #d97706; }
+        .cert-card-4 { background: linear-gradient(135deg, rgba(44, 155, 122, 0.12), rgba(44, 155, 122, 0.05)); border-left: 4px solid #2c9b7a; }
+
+        .cert-card-1, .cert-card-2, .cert-card-3, .cert-card-4 {
             backdrop-filter: blur(2px);
             border-radius: 20px;
             padding: 1.2rem 1.5rem;
             text-align: center;
             font-weight: 600;
-            color: #1e5a48;
-            border: 1px solid rgba(44, 155, 122, 0.3);
             transition: all 0.3s ease;
             cursor: pointer;
-            position: relative;
-            overflow: hidden;
         }
         
-        .cert-card::before {
-            content: '📜';
-            margin-right: 8px;
-            font-size: 1.1rem;
-        }
+        .cert-card-1 { color: #1f5e7e; }
+        .cert-card-2 { color: #5b21b6; }
+        .cert-card-3 { color: #b45f06; }
+        .cert-card-4 { color: #1e6f5c; }
         
-        .cert-card:hover {
-            transform: translateY(-5px);
-            background: white;
-            border-color: #2c9b7a;
-            box-shadow: 0 10px 25px rgba(44, 155, 122, 0.15);
-        }
+        .cert-card-1::before { content: '📋'; margin-right: 8px; }
+        .cert-card-2::before { content: '🏅'; margin-right: 8px; }
+        .cert-card-3::before { content: '📘'; margin-right: 8px; }
+        .cert-card-4::before { content: '⭐'; margin-right: 8px; }
+        
+        .cert-card-1:hover { transform: translateY(-5px); background: rgba(44, 125, 160, 0.2); box-shadow: 0 10px 25px rgba(44, 125, 160, 0.2); }
+        .cert-card-2:hover { transform: translateY(-5px); background: rgba(124, 58, 237, 0.2); box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2); }
+        .cert-card-3:hover { transform: translateY(-5px); background: rgba(217, 119, 6, 0.2); box-shadow: 0 10px 25px rgba(217, 119, 6, 0.2); }
+        .cert-card-4:hover { transform: translateY(-5px); background: rgba(44, 155, 122, 0.2); box-shadow: 0 10px 25px rgba(44, 155, 122, 0.2); }
 
         /* Responsive Design */
         @media (max-width: 780px) {
@@ -315,26 +334,25 @@
             .section-title h2 {
                 font-size: 2rem;
             }
-            .edu-item h3 {
+            .edu-item-1 h3, .edu-item-2 h3, .edu-item-3 h3 {
                 font-size: 1.3rem;
             }
             .edu-profile-image {
-                width: 200px;
-                height: 200px;
+                width: 280px;
             }
         }
 
         @media (max-width: 480px) {
-            .edu-item {
+            .edu-item-1, .edu-item-2, .edu-item-3 {
                 padding: 1.2rem;
             }
-            .cert-card {
+            .cert-card-1, .cert-card-2, .cert-card-3, .cert-card-4 {
                 padding: 1rem;
                 font-size: 0.9rem;
             }
             .edu-profile-image {
-                width: 160px;
-                height: 160px;
+                width: 100%;
+                max-width: 280px;
             }
         }
 
@@ -365,9 +383,9 @@
     </nav>
 
     <div class="container education-page">
-        <!-- Profile Image Section - ENLARGED -->
+        <!-- Profile Image Section - FULL RECTANGLE (not round) -->
         <div class="profile-wrapper">
-            <img src="image.png" alt="Shaniece Dillahunt" class="edu-profile-image" onerror="this.src='https://via.placeholder.com/280x280?text=Shaniece+Dillahunt'">
+            <img src="image.png" alt="Shaniece Dillahunt" class="edu-profile-image" onerror="this.src='https://via.placeholder.com/320x380?text=Shaniece+Dillahunt'">
         </div>
         
         <div class="section-title">
@@ -376,18 +394,23 @@
         </div>
 
         <div class="timeline">
-            <div class="edu-item">
+            <!-- Item 1: MPA - Teal/Blue theme -->
+            <div class="edu-item-1">
                 <span class="date">Expected May 2026</span>
                 <h3>Master of Public Administration (MPA)</h3>
                 <p class="school">Rutgers University–Newark</p>
             </div>
-            <div class="edu-item">
+            
+            <!-- Item 2: Bachelor's - Purple theme -->
+            <div class="edu-item-2">
                 <span class="date">May 2025</span>
                 <h3>Bachelor of Arts – Public Affairs and Administration</h3>
                 <p class="school">Rutgers University–Newark | <em>Magna Cum Laude</em></p>
                 <p class="honor">🏆 Inducted into Pi Alpha Alpha Honor Society</p>
             </div>
-            <div class="edu-item">
+            
+            <!-- Item 3: Associate - Amber/Gold theme -->
+            <div class="edu-item-3">
                 <span class="date">May 2023</span>
                 <h3>Associate of Science – Business Administration</h3>
                 <p class="school">Passaic County Community College</p>
@@ -398,10 +421,10 @@
         <div class="cert-section">
             <h3>📜 Professional Certificates</h3>
             <div class="cert-grid">
-                <div class="cert-card">Healthcare Administration</div>
-                <div class="cert-card">Leadership and No-Blame Problem Solving for Rutgers Faculty & Staff</div>
-                <div class="cert-card">CITI Program Certification</div>
-                <div class="cert-card">Leadership of Public Organizations</div>
+                <div class="cert-card-1">Healthcare Administration</div>
+                <div class="cert-card-2">Leadership and No-Blame Problem Solving for Rutgers Faculty & Staff</div>
+                <div class="cert-card-3">CITI Program Certification</div>
+                <div class="cert-card-4">Leadership of Public Organizations</div>
             </div>
         </div>
     </div>
