@@ -1,130 +1,124 @@
-<link rel="stylesheet" href="style.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Shaniece Dillahunt</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Shaniece Dillahunt</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Portfolio Specific Styling */
+        body { background: radial-gradient(circle at top right, #fdf2f2 0%, #f4f4f4 50%); min-height: 100vh; }
+        
+        .fade-in { opacity: 0; transform: translateY(20px); transition: 0.8s ease-out; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        .competency-section { margin-bottom: 20px; border-radius: 12px; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.02); overflow: hidden; }
+        .competency-header { background: var(--dark-slate); color: white; padding: 25px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; }
+        
+        .competency-content { padding: 0 30px; max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease-in-out, opacity 0.4s ease; background: #fff; }
+        .competency-content.open { opacity: 1; padding-bottom: 30px; }
+
+        .artifact-card { padding: 30px 0; border-bottom: 1px solid #eee; }
+        .artifact-card:last-child { border-bottom: none; }
+        
+        /* Viewer Styling to match your Resume page */
+        .artifact-viewer { margin: 20px 0; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #f9f9f9; }
+        .artifact-iframe { width: 100%; height: 500px; border: none; }
+        
+        .artifact-title { color: var(--rutgers-red); font-weight: 800; font-size: 1.2rem; }
+        .takeaway-box { background: #fffafa; border-left: 4px solid var(--rutgers-red); padding: 15px; margin-top: 15px; font-style: italic; }
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-           <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="resume.html">My Resume</a></li>
-                <li><a href="portfolio.html" class="active">My Portfolio</a></li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container portfolio-page">
-        <div class="section-title">
-            <h2>Academic Portfolio</h2>
-            <p class="institution">Master of Public Administration Core Competencies</p>
-            <div class="underline"></div>
-        </div>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="resume.html">My Resume</a></li>
+            </ul>
+        </div>
+    </nav>
 
-        <div class="competency-container">
-            
-           <section class="competency-section">
-                <div class="competency-header">
-                    <h3>Competency 1: Leadership & Management</h3>
-                    <p>This competency reflects my ability to lead and manage in the public interest by applying ethical frameworks, promoting accountability, and shaping organizational culture.</p>
-                </div>
-                <div class="paper-grid">
-                    <div class="paper-card">
-                        <h4>Appreciative Inquiry and Ethical Leadership</h4>
-                        <p>Explores leadership through a strengths-based approach, focusing on building positive organizational culture and ethical decision-making.</p>
-                        <a href=sdillahunttopicpaperleadingbyexampleelevatingethicalstandardsintheworkplace.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                    <div class="paper-card">
-                        <h4>Ethical Leadership Interview Analysis</h4>
-                        <p>Examines real-world leadership practices, highlighting how leadership styles influence organizational behavior and accountability.</p>
-                        <a href="sdillahunttopicpaperleadingbyexampleelevatingethicalstandardsintheworkplace.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                </div>
-            </section>
+    <div class="container">
+        <div class="section-title fade-in">
+            <h2>Capstone Portfolio</h2>
+            <div class="underline"></div>
+        </div>
 
-            <section class="competency-section">
-                <div class="competency-header">
-                    <h3>Competency 2: Policy Process</h3>
-                    <p>This competency demonstrates my ability to understand, analyze, and contribute to the development and implementation of public policies.</p>
-                </div>
-                <div class="paper-grid">
-                    <div class="paper-card">
-                        <h4>Federal Unions & Their Influence</h4>
-                        <p>Analyzes the role of federal unions in shaping labor policy and influencing workplace conditions within the public sector.</p>
-                        <a href="sdillahuntfinalpaper121524.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                    <div class="paper-card">
-                        <h4>Preventing a Coverage Spiral</h4>
-                        <p>Evaluates healthcare policy challenges and proposes strategies to stabilize insurance markets and reduce costs.</p>
-                        <a href="s.dillahunthealthsystems&policyfinal12222025.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                </div>
-            </section>
+        <div class="competency-section fade-in">
+            <div class="competency-header" onclick="toggleSection(this)">
+                <span>1. Leadership & Management</span>
+                <span>+</span>
+            </div>
+            <div class="competency-content">
+                <div class="artifact-card">
+                    <div class="artifact-title">Ethical Leadership Topic Paper</div>
+                    <p>Analyzed real workplace scenarios using ethical frameworks, focusing on how leadership decisions impact employees and organizational outcomes.</p>
+                    <div class="artifact-viewer">
+                        <iframe src="Ethical_Leadership_Paper.pdf" class="artifact-iframe"></iframe>
+                    </div>
+                    <div class="takeaway-box">
+                        <strong>Key Takeaway:</strong> Recognizes how leadership decisions require balancing competing priorities while maintaining integrity and fairness.
+                    </div>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Appreciative Inquiry Interview Project</div>
+                    <p>Conducted interviews using a strengths-based approach to explore how communication and engagement support employee development.</p>
+                    <div class="artifact-viewer">
+                        <iframe src="Appreciative_Inquiry_Project.pdf" class="artifact-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <section class="competency-section">
-                <div class="competency-header">
-                    <h3>Competency 3: Analysis, Critical Thinking, & Decision-Making</h3>
-                    <p>Reflects my ability to evaluate complex issues, apply theoretical frameworks, and develop evidence-based solutions.</p>
-                </div>
-                <div class="paper-grid">
-                    <div class="paper-card">
-                        <h4>Organizational Analysis: USPS</h4>
-                        <p>Applies organizational theories to identify operational problems and provide strategic recommendations for the USPS.</p>
-                        <a href="sdillahuntorganizationalanalysispaper12.10.24.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                    <div class="paper-card">
-                        <h4>Digital Transformation in Public Sector</h4>
-                        <p>Examines how technological change impacts efficiency and service delivery within public organizations.</p>
-                        <a href="sdillahunthmoandposhealthplans.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                </div>
-            </section>
+        <div class="competency-section fade-in">
+            <div class="competency-header" onclick="toggleSection(this)">
+                <span>2. Policy Process</span>
+                <span>+</span>
+            </div>
+            <div class="competency-content">
+                <div class="artifact-card">
+                    <div class="artifact-title">Policy Analysis Paper</div>
+                    <p>Evaluated policy implications and outcomes through ethical and administrative lenses in real-world situations[cite: 8].</p>
+                    <div class="artifact-viewer">
+                        <iframe src="Policy_Analysis_Paper.pdf" class="artifact-iframe"></iframe>
+                    </div>
+                </div>
+                <div class="artifact-card">
+                    <div class="artifact-title">Federal Unions and Their Influence</div>
+                    <p>Examined how labor policies and union representation support fairness and accountability in public organizations[cite: 8].</p>
+                    <div class="artifact-viewer">
+                        <iframe src="Federal_Unions_Paper.pdf" class="artifact-iframe"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <section class="competency-section">
-                <div class="competency-header">
-                    <h3>Competency 4: Public Service Perspective</h3>
-                    <p>Highlights my understanding of public service values, including equity, accessibility, accountability, and community impact.</p>
-                </div>
-                <div class="paper-grid">
-                    <div class="paper-card">
-                        <h4>COVID-19 Vaccination Campaign</h4>
-                        <p>Analyzes large-scale public service initiatives emphasizing equitable access, public trust, and collaboration.</p>
-                        <a href="sdillahuntcurrenteventessay2.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                    <div class="paper-card">
-                        <h4>NJDOL Virtual Assistant Project</h4>
-                        <p>Evaluates how technology can improve public service delivery while maintaining accountability and accessibility.</p>
-                        <a href="sdillahuntfinalprojecttechpubadmin.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                </div>
-            </section>
-            <section class="competency-section">
-                <div class="competency-header">
-                    <h3>Competency 5: Communication & Interaction</h3>
-                    <p>Demonstrates my ability to communicate effectively through written, analytical, and interpersonal formats.</p>
-                </div>
-                <div class="paper-grid">
-                    <div class="paper-card">
-                        <h4>Ethical Leadership Interview Protocol</h4>
-                        <p>Showcases the design of structured questions to guide meaningful conversations with diverse leadership perspectives.</p>
-                        <a href=sdillahuntappreciativeinquiryethicalleadershipinterview protocol.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                    <div class="paper-card">
-                        <h4>HMO vs. POS Health Plans Analysis</h4>
-                        <p>Compares complex healthcare systems in an accessible format to support effective analytical decision-making.</p>
-                        <a href="sdillahunthmoandposhealthplans.pdf" target="_blank" class="view-btn">View Paper</a>
-                    </div>
-                </div>
-            </section>
+        </div>
 
-        </div>
-    </div>
+    <script>
+        // Scroll Fade-in
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Accordion Toggle
+        function toggleSection(header) {
+            const content = header.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.classList.remove('open');
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.classList.add('open');
+            }
+        }
+    </script>
 </body>
 </html>
