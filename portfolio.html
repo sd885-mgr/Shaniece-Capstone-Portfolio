@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="style.css">
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,14 +14,18 @@
 
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            /* REFINED BACKGROUND: soft warm gradient + subtle noise texture → eliminates plain white */
-            background: linear-gradient(145deg, #fefcf5 0%, #f6f9f7 45%, #f0f5f2 100%);
+            /* BACKGROUND IMAGE: profilepic.jpg */
+            background-image: url('profilepic.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #1a2c3e;
             line-height: 1.5;
             position: relative;
         }
 
-        /* subtle grain overlay for depth (no plain white feeling) */
+        /* SEMI-TRANSPARENT OVERLAY for text readability */
         body::before {
             content: "";
             position: fixed;
@@ -30,14 +33,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDYiLz48L3N2Zz4=');
-            background-repeat: repeat;
-            opacity: 0.35;
+            background: rgba(255, 255, 255, 0.88);
+            /* you can adjust opacity: 0.85 = more image visible, 0.92 = easier text reading */
             pointer-events: none;
             z-index: 0;
         }
 
-        /* ensure all content sits above the grain */
+        /* subtle grain texture for extra depth (optional, adds elegance) */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ensure all content sits above the overlay */
         nav, .container, footer-note {
             position: relative;
             z-index: 2;
@@ -45,13 +62,13 @@
 
         /* Navigation – soft glassmorphism */
         nav {
-            background: rgba(255, 255, 255, 0.82);
+            background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.02);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.02);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(200, 212, 205, 0.5);
+            border-bottom: 1px solid rgba(180, 200, 188, 0.5);
         }
 
         .nav-container {
@@ -155,43 +172,43 @@
             border-radius: 32px;
             overflow: hidden;
             transition: all 0.2s ease;
-            box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.02);
-            backdrop-filter: blur(1px);
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid rgba(220, 232, 225, 0.7);
+            box-shadow: 0 12px 28px -12px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(200, 215, 208, 0.6);
         }
 
-        /* individual color themes (light but distinctive) */
+        /* individual color themes */
         .comp-1 { border-left: 6px solid #2c7da0; }
-        .comp-1 .competency-header { background: rgba(248, 252, 255, 0.9); border-bottom: 1px solid #e3f0f7; }
+        .comp-1 .competency-header { background: rgba(248, 252, 255, 0.92); border-bottom: 1px solid #e3f0f7; }
         .comp-1 .competency-header h3 { color: #1f5e7e; }
         .comp-1 .paper-card h4 { border-left-color: #2c7da0; color: #1e5775; }
         .comp-1 .view-btn { background: #eef4f9; color: #1f6685; border-color: #d0e3ef; }
         .comp-1 .view-btn:hover { background: #2c7da0; color: white; }
 
         .comp-2 { border-left: 6px solid #d97706; }
-        .comp-2 .competency-header { background: rgba(255, 250, 240, 0.9); border-bottom: 1px solid #fef0e0; }
+        .comp-2 .competency-header { background: rgba(255, 250, 240, 0.92); border-bottom: 1px solid #fef0e0; }
         .comp-2 .competency-header h3 { color: #b45f06; }
         .comp-2 .paper-card h4 { border-left-color: #e68a2e; color: #aa5e00; }
         .comp-2 .view-btn { background: #fef5ea; color: #c46f0a; border-color: #f5e2ce; }
         .comp-2 .view-btn:hover { background: #d97706; color: white; }
 
         .comp-3 { border-left: 6px solid #7c3aed; }
-        .comp-3 .competency-header { background: rgba(250, 247, 255, 0.9); border-bottom: 1px solid #ede9fe; }
+        .comp-3 .competency-header { background: rgba(250, 247, 255, 0.92); border-bottom: 1px solid #ede9fe; }
         .comp-3 .competency-header h3 { color: #5b21b6; }
         .comp-3 .paper-card h4 { border-left-color: #8b5cf6; color: #5b21b6; }
         .comp-3 .view-btn { background: #f3f0ff; color: #6d28d9; border-color: #e2dcfc; }
         .comp-3 .view-btn:hover { background: #7c3aed; color: white; }
 
         .comp-4 { border-left: 6px solid #2b9348; }
-        .comp-4 .competency-header { background: rgba(244, 251, 242, 0.9); border-bottom: 1px solid #e2f3e4; }
+        .comp-4 .competency-header { background: rgba(244, 251, 242, 0.92); border-bottom: 1px solid #e2f3e4; }
         .comp-4 .competency-header h3 { color: #1f6e3d; }
         .comp-4 .paper-card h4 { border-left-color: #3b9e5c; color: #1c6e3b; }
         .comp-4 .view-btn { background: #eef7ef; color: #2c7a47; border-color: #d9ecd9; }
         .comp-4 .view-btn:hover { background: #2b9348; color: white; }
 
         .comp-5 { border-left: 6px solid #e05a5a; }
-        .comp-5 .competency-header { background: rgba(255, 247, 247, 0.9); border-bottom: 1px solid #fde2e2; }
+        .comp-5 .competency-header { background: rgba(255, 247, 247, 0.92); border-bottom: 1px solid #fde2e2; }
         .comp-5 .competency-header h3 { color: #bc4e4e; }
         .comp-5 .paper-card h4 { border-left-color: #e27373; color: #b14444; }
         .comp-5 .view-btn { background: #fef0f0; color: #c75353; border-color: #fadfdf; }
@@ -214,31 +231,30 @@
             color: #415f70;
         }
 
-        /* PAPER GRID – clean cards with depth */
+        /* PAPER GRID */
         .paper-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.8rem;
             padding: 2rem;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.5);
         }
 
         .paper-card {
             border-radius: 24px;
             padding: 1.6rem;
-            background: #ffffffea;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.02);
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
             border: 1px solid #eef2ef;
             transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
-            backdrop-filter: blur(2px);
         }
 
         .paper-card:hover {
             transform: translateY(-5px);
             background: white;
-            box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 20px 28px -12px rgba(0, 0, 0, 0.15);
             border-color: #cfdfd7;
         }
 
@@ -313,34 +329,21 @@
             }
         }
 
-        /* subtle decorative wave at bottom for extra polish */
-        .wave-bg {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 160px;
-            background: radial-gradient(ellipse at 50% 100%, rgba(44, 155, 122, 0.08) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
         footer-note {
             display: block;
             text-align: center;
             margin-top: 3.5rem;
             font-size: 0.8rem;
-            color: #6b8c7c;
+            color: #5a7a6a;
             font-weight: 500;
             letter-spacing: 0.2px;
-            border-top: 1px solid rgba(180, 200, 188, 0.5);
+            border-top: 1px solid rgba(120, 150, 135, 0.3);
             padding-top: 2rem;
             background: transparent;
         }
     </style>
 </head>
 <body>
-    <div class="wave-bg"></div>
     <nav>
         <div class="nav-container">
             <div class="logo">Shaniece L Dillahunt<span>, MPA</span></div>
@@ -363,7 +366,7 @@
 
         <div class="competency-container">
             
-            <!-- Competency 1: Leadership & Management - Teal -->
+            <!-- Competency 1: Leadership & Management -->
             <section class="competency-section comp-1">
                 <div class="competency-header">
                     <h3>⚡ Competency 1: Leadership & Management</h3>
@@ -383,7 +386,7 @@
                 </div>
             </section>
 
-            <!-- Competency 2: Policy Process - Amber/Gold -->
+            <!-- Competency 2: Policy Process -->
             <section class="competency-section comp-2">
                 <div class="competency-header">
                     <h3>📜 Competency 2: Policy Process</h3>
@@ -403,7 +406,7 @@
                 </div>
             </section>
 
-            <!-- Competency 3: Analysis, Critical Thinking, & Decision-Making - Purple -->
+            <!-- Competency 3: Analysis, Critical Thinking, & Decision-Making -->
             <section class="competency-section comp-3">
                 <div class="competency-header">
                     <h3>🧠 Competency 3: Analysis, Critical Thinking, & Decision-Making</h3>
@@ -423,7 +426,7 @@
                 </div>
             </section>
 
-            <!-- Competency 4: Public Service Perspective - Green/Sage -->
+            <!-- Competency 4: Public Service Perspective -->
             <section class="competency-section comp-4">
                 <div class="competency-header">
                     <h3>🤝 Competency 4: Public Service Perspective</h3>
@@ -443,7 +446,7 @@
                 </div>
             </section>
 
-            <!-- Competency 5: Communication & Interaction - Coral/Rose -->
+            <!-- Competency 5: Communication & Interaction -->
             <section class="competency-section comp-5">
                 <div class="competency-header">
                     <h3>💬 Competency 5: Communication & Interaction</h3>
