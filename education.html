@@ -3,27 +3,368 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Education | Shaniece Dillahunt</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Education & Experience | Shaniece Dillahunt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: url('profilepic.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #1a2c3e;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        /* Semi-transparent overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Subtle grain texture */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav, .container, footer-note {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(180, 200, 188, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #1f543e, #1e6b55);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: none;
+            color: #5f7f8c;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2c4b5e;
+            transition: 0.2s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            border-bottom-color: #2c8f72;
+            color: #1a705c;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1280px;
+            margin: 2rem auto;
+            padding: 0 2rem 3rem;
+        }
+
+        /* Profile Image Styling */
+        .profile-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .edu-profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .edu-profile-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(125deg, #1e5943, #236b53);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .underline {
+            height: 3px;
+            width: 70px;
+            background: #2c9b7a;
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* Timeline / Education Items - Professional Experience Styling */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-bottom: 3rem;
+        }
+
+        .edu-item {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 1.8rem;
+            border-left: 6px solid #2c9b7a;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #2c9b7a, #6bc6a8, #2c9b7a);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .edu-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+            background: rgba(255, 255, 255, 0.98);
+        }
+        
+        .edu-item:hover::before {
+            opacity: 1;
+        }
+
+        .date {
+            display: inline-block;
+            background: linear-gradient(135deg, #2c9b7a, #236b53);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        .edu-item h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e5a48;
+            margin-bottom: 0.5rem;
+        }
+
+        .school {
+            font-size: 1rem;
+            color: #4a6a7a;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .honor {
+            display: inline-block;
+            background: rgba(44, 155, 122, 0.12);
+            color: #1e6f5c;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Certificates Section */
+        .cert-section {
+            margin-top: 2rem;
+        }
+        
+        .cert-section h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e5a48;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            text-align: center;
+            font-weight: 600;
+            color: #1e5a48;
+            border: 1px solid rgba(44, 155, 122, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cert-card::before {
+            content: '📜';
+            margin-right: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            border-color: #2c9b7a;
+            box-shadow: 0 10px 25px rgba(44, 155, 122, 0.15);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 780px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding: 0 1.2rem 2rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .edu-item h3 {
+                font-size: 1.3rem;
+            }
+            .edu-profile-image {
+                width: 140px;
+                height: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .edu-item {
+                padding: 1.2rem;
+            }
+            .cert-card {
+                padding: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        footer-note {
+            display: block;
+            text-align: center;
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #5a7a6a;
+            font-weight: 500;
+            border-top: 1px solid rgba(120, 150, 135, 0.3);
+            padding-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-           <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
+            <div class="logo">Shaniece L Dillahunt<span>, MPA</span></div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Me</a></li>
                 <li><a href="education.html" class="active">Education</a></li>
                 <li><a href="resume.html">My Resume</a></li>
-                 <li><a href="portfolio.html">My portfolio</a></li>
+                <li><a href="portfolio.html">My Portfolio</a></li>
             </ul>
         </div>
     </nav>
 
     <div class="container education-page">
-        <img src="image.png" alt="Shaniece Dillahunt" class="edu-profile-image">
+        <!-- Profile Image Section -->
+        <div class="profile-wrapper">
+            <img src="image.png" alt="Shaniece Dillahunt" class="edu-profile-image" onerror="this.src='https://via.placeholder.com/180x180?text=SD'">
+        </div>
         
         <div class="section-title">
             <h2>Professional Experience</h2>
@@ -40,25 +381,30 @@
                 <span class="date">May 2025</span>
                 <h3>Bachelor of Arts – Public Affairs and Administration</h3>
                 <p class="school">Rutgers University–Newark | <em>Magna Cum Laude</em></p>
-                <p class="honor">Inducted into Pi Alpha Alpha Honor Society</p>
+                <p class="honor">🏆 Inducted into Pi Alpha Alpha Honor Society</p>
             </div>
             <div class="edu-item">
                 <span class="date">May 2023</span>
                 <h3>Associate of Science – Business Administration</h3>
                 <p class="school">Passaic County Community College</p>
-                <p class="honor">Inducted into NSLS</p>
+                <p class="honor">⭐ Inducted into NSLS (National Society of Leadership and Success)</p>
             </div>
         </div>
 
         <div class="cert-section">
-            <h3 style="margin-bottom: 20px;">Professional Certificates</h3>
+            <h3>📜 Professional Certificates</h3>
             <div class="cert-grid">
                 <div class="cert-card">Healthcare Administration</div>
-                <div class="cert-card">Leadership and no-blame Problem Solving for Rutgers Faculty & staff </div>
-                <div class="cert-card">CITI Program</div>
+                <div class="cert-card">Leadership and No-Blame Problem Solving for Rutgers Faculty & Staff</div>
+                <div class="cert-card">CITI Program Certification</div>
                 <div class="cert-card">Leadership of Public Organizations</div>
             </div>
         </div>
     </div>
+    
+    <footer-note>
+        ✦ Commitment to excellence in public service and leadership ✦
+    </footer-note>
 </body>
 </html>
+
