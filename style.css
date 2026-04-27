@@ -1,102 +1,76 @@
-:root {
-    --rutgers-red: #A31920;
-    --dark-slate: #262626;
-    --soft-gray: #f8f9fa;
-    --text-dark: #2d2d2d;
-    --text-light: #6c757d;
-    --white: #ffffff;
+/* BACKGROUND FOR RESUME */
+.resume-bg {
+    background: url('resume-background.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
-body {
-    margin: 0;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--soft-gray);
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
-/* Navigation */
-nav {
-    background: var(--dark-slate);
-    padding: 1rem 0;
-    border-bottom: 4px solid var(--rutgers-red);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.nav-container {
-    max-width: 1100px;
+.resume-page {
+    padding-top: 120px;
+    max-width: 900px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Updated CV Header with Glass Effect */
+.cv-header-flex {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
-}
-
-.logo { font-weight: 800; font-size: 1.3rem; color: var(--white); }
-.logo span { color: var(--rutgers-red); }
-
-nav ul { display: flex; list-style: none; gap: 2rem; margin: 0; }
-nav a { color: #ccc; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-nav a:hover, nav a.active { color: var(--white); border-bottom: 2px solid var(--rutgers-red); }
-
-/* Container & Titles */
-.container { max-width: 1000px; margin: 40px auto; padding: 0 2rem; }
-.section-title { text-align: center; margin-bottom: 50px; }
-.underline { width: 50px; height: 4px; background: var(--rutgers-red); margin: 10px auto; }
-
-/* Widget: Card Styling */
-.card {
-    background: var(--white);
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.95); /* Nearly solid for text readability */
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
-}
-.card:hover { transform: translateY(-5px); }
-
-/* Fix for About Me Image & Text Alignment */
-.about-wrapper {
-    display: flex;
-    gap: 50px;
-    align-items: flex-start;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+    color: #222;
 }
 
-.about-image {
-    width: 350px; /* Full, presentable size */
-    border-radius: 12px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+.cv-icon {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
 }
 
-.about-text { flex: 1; }
-
-/* Hero Section Styles */
-.hero { text-align: center; padding: 80px 20px; background: var(--white); border-bottom: 1px solid #eee; }
-.hero-image {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 6px solid var(--soft-gray);
-    margin-bottom: 20px;
-    object-fit: cover;
+.cv-header-text h3 {
+    margin: 0 0 10px 0;
+    color: #004080;
+    font-size: 1.4rem;
 }
 
-/* Widgets: Experience Pills */
-.pill {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #fdf2f2;
-    color: var(--rutgers-red);
-    border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    margin: 5px;
-    border: 1px solid #f9d6d6;
+.cv-header-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .about-wrapper { flex-direction: column; align-items: center; text-align: center; }
-    .about-image { width: 100%; max-width: 300px; }
+.download-instruction {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+.small-btn {
+    padding: 10px 20px !important;
+    font-size: 0.85rem !important;
+    margin-top: 10px;
+}
+
+/* Iframe Styling */
+.resume-iframe {
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    background: #fff;
+}
+
+.viewer-section {
+    margin-bottom: 60px;
+}
+
+/* Responsiveness for the flex header */
+@media (max-width: 600px) {
+    .cv-header-flex {
+        flex-direction: column;
+        text-align: center;
+    }
 }
