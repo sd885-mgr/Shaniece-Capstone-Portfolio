@@ -1,278 +1,106 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Shaniece Dillahunt</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
-    <style>
-        /* Interactive Background */
-        body {
-            background: radial-gradient(circle at top right, #fdf2f2 0%, #f4f4f4 50%);
-            min-height: 100vh;
-        }
-
-        /* Fade-in Animation Class */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .portfolio-intro {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(5px);
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
-            border-top: 5px solid var(--rutgers-red);
-        }
-
-        .competency-section {
-            margin-bottom: 20px;
-            border-radius: 12px;
-            background: #fff;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .competency-section:hover {
-            transform: scale(1.01);
-        }
-
-        .competency-header {
-            background: var(--dark-slate);
-            color: white;
-            padding: 25px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 700;
-        }
-
-        .plus-icon {
-            font-size: 1.5rem;
-            transition: transform 0.4s ease;
-        }
-
-        .active-header .plus-icon {
-            transform: rotate(45deg);
-        }
-
-        .competency-content {
-            padding: 0 30px;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out, opacity 0.4s ease;
-            background: #fff;
-        }
-
-        .competency-content.open {
-            opacity: 1;
-            padding-bottom: 30px;
-        }
-
-        .artifact-card {
-            padding: 25px 0;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .artifact-card:last-child {
-            border-bottom: none;
-        }
-
-        .artifact-title {
-            color: var(--rutgers-red);
-            font-weight: 800;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .artifact-meta {
-            font-size: 0.8rem;
-            color: #888;
-            text-transform: uppercase;
-            margin-bottom: 10px;
-        }
-
-        .takeaway-box {
-            background: #fffafa;
-            border-left: 4px solid var(--rutgers-red);
-            padding: 20px;
-            margin-top: 15px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.95rem;
-        }
-    </style>
-</head>
-<body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo">Shaniece L Dillahunt<span>,MPA</span></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="resume.html">My Resume</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="section-title fade-in">
-            <h2>Core Competencies & Artifacts</h2>
-            <div class="underline"></div>
-        </div>
-
-        <div class="portfolio-intro fade-in">
-            <p>As a Master of Public Administration candidate at <strong>Rutgers University</strong>, I have developed fundamental competencies that bridge academic theory with professional practice. Below are the key artifacts from my curriculum that demonstrate mastery in public service leadership.</p>
-        </div>
-
-        <div class="competency-section fade-in">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>1. Leadership & Management</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">Ethical Leadership Topic Paper</div>
-                    <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025</div>
-                    <p>Analyzed real workplace scenarios using ethical frameworks, focusing on how leadership decisions impact employees and organizational outcomes. Evaluated approaches to situations where no clear "right" answer existed.</p>
-                    <div class="takeaway-box">
-                        <strong>Strategic Insight:</strong> Balancing competing priorities while maintaining integrity. This directly connects to my role in Employment Relations.
-                    </div>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Appreciative Inquiry Interview Project</div>
-                    <div class="artifact-meta">Managing Public Organizations | Fall 2024</div>
-                    <p>Interviewed a leader to understand how strengths-based approaches drive organizational change and foster a culture of development.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="competency-section fade-in">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>2. Policy Process</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">Policy Analysis Paper</div>
-                    <div class="artifact-meta">Ethical Challenges in Public Service | Spring 2025</div>
-                    <p>Evaluated how policies are interpreted in practice and how they shape public service delivery for diverse groups.</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Federal Unions and Their Influence</div>
-                    <div class="artifact-meta">Labor Management Relations | Fall 2024</div>
-                    <p>Analysis of how labor policies and unions influence workplace negotiations and communication.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="competency-section fade-in">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>3. Analysis & Critical Thinking</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">NJDOL Virtual Assistant Systems Analysis</div>
-                    <div class="artifact-meta">Technology & Public Administration | Fall 2025</div>
-                    <p>Critical analysis of technology systems in the public sector, examining the influence of leadership and human choice.</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Economic Analysis Assignment</div>
-                    <div class="artifact-meta">Economics for Public Administration | Summer 2025</div>
-                    <p>Applied economic principles to public sector challenges, focusing on resource allocation and data-driven decision making.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="competency-section fade-in">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>4. Public Service Perspective</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">HR Case Analysis</div>
-                    <div class="artifact-meta">Human Resources Management | Fall 2024</div>
-                    <p>Application of fairness, consistency, and accountability to real-world HR issues and employee support.</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Health Policy/ Finance Assignment</div>
-                    <div class="artifact-meta">Health Care Finance | Spring 2024</div>
-                    <p>Evaluated how financial budgeting and resource allocation impact service delivery within a healthcare context.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="competency-section fade-in">
-            <div class="competency-header" onclick="toggleSection(this)">
-                <span>5. Diversity & Communication</span>
-                <span class="plus-icon">+</span>
-            </div>
-            <div class="competency-content">
-                <div class="artifact-card">
-                    <div class="artifact-title">Labor Relations Analysis</div>
-                    <div class="artifact-meta">Labor Management Relations | Fall 2024</div>
-                    <p>Navigating communication in complex workplace environments to facilitate conflict resolution.</p>
-                </div>
-                <div class="artifact-card">
-                    <div class="artifact-title">Organizational Communication Reflection</div>
-                    <div class="artifact-meta">Managing Public Organizations | Fall 2024</div>
-                    <p>Reflected on leadership communication strategies, employee engagement, and effective collaboration.</p>
-                </div>
-            </div>
-        </div>
-
+<div class="container portfolio-page">
+    <div class="section-title">
+        <h2>Academic Portfolio</h2>
+        <p>Master of Public Administration Core Competencies</p>
+        <div class="underline"></div>
     </div>
 
-    <script>
-        // Scroll Fade-in Logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('visible');
-            });
-        }, { threshold: 0.1 });
+    <div class="competency-container">
+        
+        <section class="competency-section">
+            <div class="competency-header">
+                <h3>Competency 1: Leadership & Management</h3>
+                <p>This competency reflects my ability to lead and manage in the public interest by applying ethical frameworks, promoting accountability, and shaping organizational culture.</p>
+            </div>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h4>Appreciative Inquiry and Ethical Leadership</h4>
+                    <p>Explores leadership through a strengths-based approach, demonstrating the ability to build positive culture and guide ethical decision-making.</p>
+                    <a href="documents/S_Dillahunt_Topic Paper #1 - Leading by Example_ Elevating Ethical Standards in the Workplace.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card">
+                    <h4>Ethical Leadership Interview Analysis</h4>
+                    <p>Analyzes real-world leadership practices across roles, reinforcing the importance of integrity and accountability.</p>
+                    <a href="documents/Dillahunt Leaders Interview Paper.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </section>
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        <section class="competency-section">
+            <div class="competency-header">
+                <h3>Competency 2: Policy Process</h3>
+                <p>Demonstrates my ability to understand, analyze, and contribute to the development and implementation of public policies.</p>
+            </div>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h4>Federal Unions & Influence</h4>
+                    <p>Analyzes the role of federal unions in shaping labor policy and how legislation and collective bargaining intersect in the public sector.</p>
+                    <a href="documents/S_Dillahunt_Final Paper_12.15.24.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card">
+                    <h4>Stabilizing Insurance Markets</h4>
+                    <p>Evaluates complex healthcare policy issues and proposes strategies for affordability, access, and long-term sustainability.</p>
+                    <a href="documents/S.Dillahunt_HealthSystems&Policy_Final_12.22.2025.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </section>
 
-        // Accordion Toggle Logic
-        function toggleSection(header) {
-            const content = header.nextElementSibling;
-            
-            // Close others
-            document.querySelectorAll('.competency-content').forEach(c => {
-                if (c !== content) {
-                    c.style.maxHeight = null;
-                    c.classList.remove('open');
-                    c.parentElement.querySelector('.competency-header').classList.remove('active-header');
-                }
-            });
+        <section class="competency-section">
+            <div class="competency-header">
+                <h3>Competency 3: Analysis, Critical Thinking, & Decision-Making</h3>
+                <p>Reflects my ability to evaluate complex issues, apply theoretical frameworks, and develop evidence-based solutions.</p>
+            </div>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h4>Organizational Analysis: USPS</h4>
+                    <p>Applies leadership theories to analyze operational challenges and provides strategic recommendations for large institutions.</p>
+                    <a href="documents/S_Dillahunt_ Organizational Analysis Paper_12.10.24.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card">
+                    <h4>Digital Transformation & Efficiency</h4>
+                    <p>Examines how technological change impacts service delivery and employee behavior in the public sector.</p>
+                    <a href="documents/S_Dillahunt_HMO and POS Health Plans.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </section>
 
-            // Toggle current
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                content.classList.remove('open');
-                header.classList.remove('active-header');
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                content.classList.add('open');
-                header.classList.add('active-header');
-            }
-        }
-    </script>
-</body>
-</html>
+        <section class="competency-section">
+            <div class="competency-header">
+                <h3>Competency 4: Public Service Perspective</h3>
+                <p>Highlights my understanding of public service values, including equity, accessibility, accountability, and community impact.</p>
+            </div>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h4>COVID-19 Vaccination Campaign Analysis</h4>
+                    <p>Lessons in public sector management, focusing on equitable access, public trust, and nonprofit collaboration.</p>
+                    <a href="documents/S_Dillahunt_Current Event Essay #2.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card">
+                    <h4>NJDOL Virtual Assistant Project</h4>
+                    <p>Evaluates how AI improves public service delivery while maintaining strict accountability and diverse community access.</p>
+                    <a href="documents/S_Dillahunt_Final Project_Tech&Pub Admin.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="competency-section">
+            <div class="competency-header">
+                <h3>Competency 5: Communication & Interaction with Diverse Groups</h3>
+                <p>Demonstrates my ability to communicate effectively through written, analytical, and interpersonal formats.</p>
+            </div>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <h4>Ethical Leadership Interview Protocol</h4>
+                    <p>Showcases the design of structured inquiries to guide meaningful conversations and engage diverse perspectives.</p>
+                    <a href="documents/S_Dillahunt_Appreciative Inquiry Ethical Leadership Interview Protocol (2).pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+                <div class="paper-card">
+                    <h4>HMO vs. POS Comparative Analysis</h4>
+                    <p>Translates complex healthcare data into an organized format that supports informed decision-making for various audiences.</p>
+                    <a href="documents/S_Dillahunt_HMO and POS Health Plans.pdf" target="_blank" class="view-btn">View Paper</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
