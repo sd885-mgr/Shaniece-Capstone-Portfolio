@@ -1,4 +1,82 @@
 /* ===== COMPLETE CSS FOR YOUR PORTFOLIO ===== */
+/* ===== DEGREE SHOWCASE - HOME PAGE ===== */
+.degree-showcase {
+    margin: 1.5rem auto;
+    max-width: 500px;
+}
+
+.degree-card {
+    background: linear-gradient(135deg, #f8f9fa 0%, #eef2f5 100%);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    border-left: 4px solid #f0a34b;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+}
+
+.degree-card:hover {
+    transform: translateX(5px);
+}
+
+.degree-year {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #f0a34b;
+    background: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.degree-info {
+    text-align: left;
+}
+
+.degree-info h3 {
+    font-size: 1.1rem;
+    color: #0a2b3e;
+    margin-bottom: 0.2rem;
+    font-weight: 700;
+}
+
+.degree-info p {
+    font-size: 0.85rem;
+    color: #5a6e7c;
+    margin-bottom: 0.2rem;
+}
+
+.degree-honor {
+    font-size: 0.75rem;
+    color: #f0a34b;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile adjustment for degree card */
+@media (max-width: 550px) {
+    .degree-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+    
+    .degree-info {
+        text-align: center;
+    }
+    
+    .degree-year {
+        font-size: 1.5rem;
+        padding: 0.2rem 0.6rem;
+        min-width: auto;
+        display: inline-block;
+    }
+}
 * {
     margin: 0;
     padding: 0;
