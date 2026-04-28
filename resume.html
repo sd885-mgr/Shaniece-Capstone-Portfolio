@@ -24,7 +24,6 @@
             position: relative;
         }
 
-        /* Semi-transparent overlay for readability */
         body::before {
             content: "";
             position: fixed;
@@ -37,7 +36,6 @@
             z-index: 0;
         }
 
-        /* Subtle grain texture */
         body::after {
             content: "";
             position: fixed;
@@ -57,7 +55,6 @@
             z-index: 2;
         }
 
-        /* Navigation */
         nav {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(12px);
@@ -117,14 +114,12 @@
             color: #1a705c;
         }
 
-        /* Main container */
         .container {
             max-width: 1280px;
             margin: 2rem auto;
             padding: 0 2rem 3rem;
         }
 
-        /* Section Title */
         .section-title {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -149,7 +144,6 @@
             border-radius: 4px;
         }
 
-        /* Resume Header Section */
         .cv-header-flex {
             display: flex;
             gap: 2rem;
@@ -230,7 +224,6 @@
             background: linear-gradient(135deg, #1e6f5c, #155a4a);
         }
 
-        /* Stats Section */
         .stats-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -252,6 +245,7 @@
         .stat-card:nth-child(2) { border-bottom-color: #7c3aed; }
         .stat-card:nth-child(3) { border-bottom-color: #d97706; }
         .stat-card:nth-child(4) { border-bottom-color: #e05a5a; }
+        .stat-card:nth-child(5) { border-bottom-color: #2c9b7a; }
 
         .stat-card:hover {
             transform: translateY(-5px);
@@ -260,7 +254,7 @@
         }
 
         .stat-number {
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
             margin-bottom: 0.3rem;
         }
@@ -268,16 +262,16 @@
         .stat-card:nth-child(2) .stat-number { color: #7c3aed; }
         .stat-card:nth-child(3) .stat-number { color: #d97706; }
         .stat-card:nth-child(4) .stat-number { color: #e05a5a; }
+        .stat-card:nth-child(5) .stat-number { color: #2c9b7a; }
 
         .stat-label {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 600;
             color: #4a6a7a;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
-        /* Skills Section */
         .skills-section {
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
@@ -331,7 +325,103 @@
             filter: brightness(0.95);
         }
 
-        /* Interactive Viewer Section */
+        /* Professional Focus Section - NEW */
+        .focus-section {
+            background: linear-gradient(135deg, rgba(44, 155, 122, 0.08), rgba(124, 58, 237, 0.05));
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid rgba(44, 155, 122, 0.3);
+            text-align: center;
+        }
+
+        .focus-section h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e5a48, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .focus-section p {
+            color: #3a5a6a;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Certificates Section with Dates */
+        .cert-section {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .cert-section h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e5a48, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .cert-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        
+        .cert-card:nth-child(1) { border-left-color: #2c7da0; }
+        .cert-card:nth-child(2) { border-left-color: #7c3aed; }
+        .cert-card:nth-child(3) { border-left-color: #d97706; }
+        .cert-card:nth-child(4) { border-left-color: #e05a5a; }
+        .cert-card:nth-child(5) { border-left-color: #2c9b7a; }
+        
+        .cert-card:hover {
+            transform: translateX(5px);
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cert-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+        .cert-card:nth-child(1) .cert-name { color: #2c7da0; }
+        .cert-card:nth-child(2) .cert-name { color: #7c3aed; }
+        .cert-card:nth-child(3) .cert-name { color: #d97706; }
+        .cert-card:nth-child(4) .cert-name { color: #e05a5a; }
+        .cert-card:nth-child(5) .cert-name { color: #2c9b7a; }
+        
+        .cert-date {
+            font-size: 0.8rem;
+            color: #5a7a6a;
+            font-weight: 500;
+            background: rgba(0,0,0,0.03);
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+
         .viewer-section {
             background: rgba(255, 255, 255, 0.94);
             backdrop-filter: blur(2px);
@@ -352,11 +442,6 @@
             -webkit-background-clip: text;
             color: transparent;
         }
-        
-        .viewer-section .section-title p {
-            color: #e05a5a;
-            font-weight: 500;
-        }
 
         .resume-iframe {
             border: none;
@@ -365,7 +450,6 @@
             background: white;
         }
 
-        /* Footer */
         footer-note {
             display: block;
             text-align: center;
@@ -380,7 +464,6 @@
             padding-top: 2rem;
         }
 
-        /* Responsive */
         @media (max-width: 780px) {
             .nav-container {
                 flex-direction: column;
@@ -404,11 +487,12 @@
             .cv-icon {
                 margin: 0 auto;
             }
-            .btn-main {
-                display: inline-block;
-            }
             .stats-section {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .cert-card {
+                flex-direction: column;
+                text-align: center;
             }
         }
 
@@ -421,13 +505,6 @@
             }
             .stats-section {
                 grid-template-columns: 1fr;
-            }
-            .skills-grid {
-                gap: 0.6rem;
-            }
-            .skill-pill {
-                font-size: 0.75rem;
-                padding: 0.4rem 1rem;
             }
         }
     </style>
@@ -452,7 +529,6 @@
             <div class="underline"></div>
         </div>
 
-        <!-- Header Section - FIRST PARAGRAPH REPLACED as requested -->
         <div class="cv-header-flex">
             <img src="cv.jpg" alt="Resume Icon" class="cv-icon" onerror="this.src='https://via.placeholder.com/100x120?text=CV'">
             <div class="cv-header-text">
@@ -471,11 +547,15 @@
             </div>
         </div>
 
-        <!-- Quick Stats / Achievements -->
+        <!-- Updated Stats Section with correct years -->
         <div class="stats-section">
             <div class="stat-card">
-                <div class="stat-number">10+ Years</div>
-                <div class="stat-label">at Rutgers University</div>
+                <div class="stat-number">11+ Years</div>
+                <div class="stat-label">at Rutgers (since 11/2014)</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">11+ Years</div>
+                <div class="stat-label">at Summit Health (since 6/2014)</div>
             </div>
             <div class="stat-card">
                 <div class="stat-number">MPA '26</div>
@@ -486,12 +566,23 @@
                 <div class="stat-label">BA in Public Affairs</div>
             </div>
             <div class="stat-card">
-                <div class="stat-number">4+</div>
-                <div class="stat-label">Certifications</div>
+                <div class="stat-number">10+ Years</div>
+                <div class="stat-label">Notary Public (since 3/2015)</div>
             </div>
         </div>
 
-        <!-- Core Competencies / Skills Section -->
+        <!-- NEW Professional Focus Section -->
+        <div class="focus-section">
+            <h3>🎯 Professional Focus</h3>
+            <p>
+                My professional focus centers on strengthening organizational effectiveness through ethical leadership, policy-informed decision-making, and a commitment to equitable service delivery.
+            </p>
+            <p style="margin-top: 1rem;">
+                I am particularly interested in roles that allow me to continue bridging human resources, healthcare, and public administration in ways that create meaningful impact for both organizations and the communities they serve.
+            </p>
+        </div>
+
+        <!-- Core Competencies Section -->
         <div class="skills-section">
             <h3>✨ Core Competencies & Expertise</h3>
             <div class="skills-grid">
@@ -500,13 +591,40 @@
                 <span class="skill-pill">Strategic Management</span>
                 <span class="skill-pill">Organizational Development</span>
                 <span class="skill-pill">Healthcare Administration</span>
-                <span class="skill-pill">Data-Driven Decision Making</span>
+                <span class="skill-pill">Employee Relations</span>
                 <span class="skill-pill">Stakeholder Engagement</span>
                 <span class="skill-pill">Program Evaluation</span>
                 <span class="skill-pill">Public Finance</span>
                 <span class="skill-pill">Diversity & Inclusion</span>
                 <span class="skill-pill">Higher Ed Management</span>
                 <span class="skill-pill">Change Management</span>
+            </div>
+        </div>
+
+        <!-- Updated Certificates Section with Dates -->
+        <div class="cert-section">
+            <h3>📜 Certifications & Credentials</h3>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <span class="cert-name">CITI Program Certification</span>
+                    <span class="cert-date">3/2025 - 3/2028</span>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-name">Healthcare Administration</span>
+                    <span class="cert-date">5/2026</span>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-name">Leadership of Public Organizations</span>
+                    <span class="cert-date">5/2026</span>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-name">Leadership & No-Blame Problem Solving for Rutgers Faculty & Staff</span>
+                    <span class="cert-date">10/2024</span>
+                </div>
+                <div class="cert-card">
+                    <span class="cert-name">Notary Public - State of New Jersey</span>
+                    <span class="cert-date">Commissioned 3/12/2015</span>
+                </div>
             </div>
         </div>
 
@@ -524,7 +642,7 @@
     </div>
 
     <footer-note>
-        ✦ 10+ years at Rutgers · MPA in Public Administration · BA in Public Affairs & Administration ✦
+        ✦ 11+ years at Rutgers · 11+ years at Summit Health · Notary Public · MPA in Public Administration ✦
     </footer-note>
 </body>
 </html>
