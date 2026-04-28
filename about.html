@@ -170,12 +170,12 @@
             background: rgba(255, 255, 255, 0.98);
         }
 
-        /* LARGE IMAGE - Not a circle! */
+        /* LARGE IMAGE - Rectangular */
         .about-large-image {
             flex-shrink: 0;
             width: 320px;
             height: auto;
-            border-radius: 24px;
+            border-radius: 20px;
             object-fit: cover;
             box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.2);
             border: 4px solid white;
@@ -238,7 +238,7 @@
             border: 1px solid rgba(44, 155, 122, 0.3);
         }
 
-        /* Mission & Values Section - Colorful cards */
+        /* Mission & Values Section */
         .values-section {
             margin: 2.5rem 0;
         }
@@ -303,6 +303,46 @@
             line-height: 1.5;
         }
         
+        /* Role Highlight Section */
+        .role-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .role-card {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 1.5rem;
+            border-top: 4px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .role-card:nth-child(1) { border-top-color: #2c7da0; }
+        .role-card:nth-child(2) { border-top-color: #d97706; }
+        
+        .role-card:hover {
+            transform: translateY(-5px);
+            background: white;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .role-card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+        
+        .role-card:nth-child(1) h4 { color: #2c7da0; }
+        .role-card:nth-child(2) h4 { color: #d97706; }
+        
+        .role-card p {
+            color: #4a6a7a;
+            line-height: 1.6;
+        }
+        
         /* Bio Section */
         .bio-section {
             background: rgba(255, 255, 255, 0.94);
@@ -324,40 +364,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-        
-        .bio-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .bio-item {
-            display: flex;
-            align-items: baseline;
-            gap: 1rem;
-            padding: 0.8rem;
-            border-radius: 16px;
-            transition: background 0.2s ease;
-        }
-        
-        .bio-item:hover {
-            background: rgba(44, 155, 122, 0.05);
-        }
-        
-        .bio-year {
-            min-width: 100px;
-            font-weight: 800;
-            font-size: 1rem;
-        }
-        .bio-item:nth-child(1) .bio-year { color: #2c7da0; }
-        .bio-item:nth-child(2) .bio-year { color: #7c3aed; }
-        .bio-item:nth-child(3) .bio-year { color: #d97706; }
-        .bio-item:nth-child(4) .bio-year { color: #e05a5a; }
-        
-        .bio-text {
-            color: #3a5a6a;
-            line-height: 1.5;
         }
         
         /* Footer */
@@ -424,13 +430,6 @@
             .about-content h3 {
                 font-size: 1.4rem;
             }
-            .bio-item {
-                flex-direction: column;
-                gap: 0.3rem;
-            }
-            .bio-year {
-                min-width: auto;
-            }
         }
     </style>
 </head>
@@ -454,84 +453,81 @@
             <div class="underline"></div>
         </div>
 
-        <!-- Hero Section with LARGE Image (not a circle!) -->
+        <!-- Hero Section with Large Image and REPLACED paragraphs -->
         <div class="about-hero">
-            <img src="profilepic1.jpg" alt="Shaniece Dillahunt" class="about-large-image" onerror="this.src='https://via.placeholder.com/320x400?text=Shaniece+Dillahunt'">
+            <img src="image.png" alt="Shaniece Dillahunt" class="about-large-image" onerror="this.src='https://via.placeholder.com/320x400?text=Shaniece+Dillahunt'">
             <div class="about-content">
                 <h3>Shaniece L. Dillahunt, MPA Candidate</h3>
-                <div class="tagline">✨ Public Service Leader | Policy Advocate | Change Maker</div>
+                <div class="tagline">✨ Public Administration Professional | Employment Relations Manager | Healthcare Advocate</div>
+                
+                <!-- REPLACED PARAGRAPHS START HERE -->
                 <p>
-                    I am a dedicated <strong>public administration professional</strong> and <strong>Master of Public Administration</strong> candidate at 
-                    Rutgers University–Newark, passionate about bridging the gap between policy and people. My journey combines 
-                    <strong>higher education management</strong> and <strong>healthcare service expertise</strong>, allowing me to approach 
-                    complex challenges with empathy, strategy, and data-driven solutions.
+                    I am a public administration professional and Master of Public Administration candidate at Rutgers University–Newark, with an anticipated completion in May 2026, and a strong foundation in leadership, human resources, and healthcare service delivery. My work is centered on applying policy and organizational strategy in ways that improve both workplace environments and the delivery of services to diverse populations.
                 </p>
                 <p>
-                    Whether leading organizational change, designing equitable programs, or advocating for accessible public services, 
-                    I believe in the power of ethical leadership to transform communities. My work is guided by integrity, collaboration, 
-                    and an unwavering commitment to the public good.
+                    As an Employment Relations Manager, I navigate complex employee relations matters, interpret policy, and support fair and equitable workplace practices. This role has strengthened my ability to lead with accountability, make informed decisions, and communicate effectively in high-impact situations.
                 </p>
+                <p>
+                    In addition to my work in higher education, I bring over a decade of experience in healthcare through my role at Summit Health. Working directly with patients has provided me with a deeper understanding of how organizational decisions and public policies affect individuals in real time.
+                </p>
+                <p>
+                    My approach to leadership is grounded in accountability, communication, and continuous improvement. I am committed to fostering environments where individuals feel supported, valued, and empowered to contribute to organizational success.
+                </p>
+                <p>
+                    I am focused on continuing to grow as a leader while contributing to organizations in ways that strengthen equity, accountability, and meaningful service delivery.
+                </p>
+                <!-- REPLACED PARAGRAPHS END HERE -->
+                
                 <div class="stats-row">
                     <span class="stat-badge">🎓 MPA Candidate '26</span>
-                    <span class="stat-badge">🏆 Magna Cum Laude</span>
-                    <span class="stat-badge">⭐ Pi Alpha Alpha Honor Society</span>
+                    <span class="stat-badge">🏢 Employment Relations Manager</span>
+                    <span class="stat-badge">🏥 10+ Years at Summit Health</span>
                 </div>
             </div>
         </div>
 
-        <!-- Core Values Section - Colorful Cards -->
+        <!-- Role Highlights Section -->
+        <div class="role-highlight">
+            <div class="role-card">
+                <h4>🏢 Employment Relations Manager</h4>
+                <p>Navigating complex employee relations matters, interpreting policy, and supporting fair and equitable workplace practices with accountability and informed decision-making.</p>
+            </div>
+            <div class="role-card">
+                <h4>🏥 Healthcare Experience</h4>
+                <p>Over a decade of experience at Summit Health, working directly with patients to understand how organizational decisions and public policies affect individuals in real time.</p>
+            </div>
+        </div>
+
+        <!-- Core Values Section -->
         <div class="values-section">
-            <h3>🌟 My Guiding Principles</h3>
+            <h3>🌟 Leadership Philosophy</h3>
             <div class="values-grid">
                 <div class="value-card">
                     <div class="value-icon">⚖️</div>
-                    <h4>Ethical Leadership</h4>
-                    <p>Leading with transparency, accountability, and moral courage in every decision.</p>
+                    <h4>Accountability</h4>
+                    <p>Leading with integrity and taking responsibility for outcomes at every level.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💬</div>
+                    <h4>Communication</h4>
+                    <p>Ensuring clarity, transparency, and effective dialogue in high-impact situations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">📈</div>
+                    <h4>Continuous Improvement</h4>
+                    <p>Committed to fostering environments where individuals feel supported and empowered.</p>
                 </div>
                 <div class="value-card">
                     <div class="value-icon">🤝</div>
-                    <h4>Equity & Inclusion</h4>
-                    <p>Championing policies that serve all communities, especially the underserved.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">📊</div>
-                    <h4>Data-Driven Impact</h4>
-                    <p>Using evidence and analytics to design effective, measurable solutions.</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon">🌱</div>
-                    <h4>Continuous Growth</h4>
-                    <p>Embracing lifelong learning and innovation in public service.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Professional Journey / Bio Timeline -->
-        <div class="bio-section">
-            <h3>📖 My Professional Journey</h3>
-            <div class="bio-grid">
-                <div class="bio-item">
-                    <span class="bio-year">2024 - Present</span>
-                    <span class="bio-text"><strong>MPA Candidate</strong> | Rutgers University–Newark — Focusing on policy analysis, leadership, and public management.</span>
-                </div>
-                <div class="bio-item">
-                    <span class="bio-year">2021 - 2025</span>
-                    <span class="bio-text"><strong>BA in Public Affairs & Administration</strong> | Rutgers University–Newark — Graduated Magna Cum Laude, Pi Alpha Alpha Honor Society.</span>
-                </div>
-                <div class="bio-item">
-                    <span class="bio-year">2020 - 2023</span>
-                    <span class="bio-text"><strong>Associate Degree</strong> | Passaic County Community College — Business Administration, NSLS inductee.</span>
-                </div>
-                <div class="bio-item">
-                    <span class="bio-year">2019 - Present</span>
-                    <span class="bio-text"><strong>Professional Experience</strong> | Higher education management and healthcare administration — Driving operational excellence and equitable service delivery.</span>
+                    <h4>Equity & Service</h4>
+                    <p>Strengthening equity, accountability, and meaningful service delivery in all work.</p>
                 </div>
             </div>
         </div>
     </div>
 
     <footer-note>
-        ✦ Committed to ethical public service, policy innovation, and community impact ✦
+        ✦ Accountability · Communication · Continuous Improvement · Equity & Service ✦
     </footer-note>
 </body>
 </html>
