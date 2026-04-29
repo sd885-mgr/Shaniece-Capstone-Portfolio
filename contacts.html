@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Contact | Shaniece Dillahunt | MPA Candidate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-image: url('profilepic.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #1a2c3e;
+            line-height: 1.5;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Semi-transparent overlay for readability */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.88);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Subtle grain texture */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDQiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            opacity: 0.3;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav, .container, footer-note {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(180, 200, 188, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.55rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #1f543e, #1e6b55);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo span {
+            font-weight: 500;
+            font-size: 0.9rem;
+            background: none;
+            color: #5f7f8c;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            color: #2c4b5e;
+            transition: 0.2s ease;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            border-bottom-color: #2c8f72;
+            color: #1a705c;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem 3rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.6rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(125deg, #1e5943, #236b53, #2c9b7a);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .underline {
+            height: 3px;
+            width: 70px;
+            background: linear-gradient(90deg, #2c9b7a, #7c3aed, #d97706);
+            margin: 1rem auto 0;
+            border-radius: 4px;
+        }
+
+        /* Contact Grid Layout */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+
+        /* Contact Info Cards */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border-left: 4px solid;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .info-card:nth-child(1) { border-left-color: #2c7da0; }
+        .info-card:nth-child(2) { border-left-color: #7c3aed; }
+        .info-card:nth-child(3) { border-left-color: #d97706; }
+        .info-card:nth-child(4) { border-left-color: #e05a5a; }
+
+        .info-card:hover {
+            transform: translateX(8px);
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-icon {
+            font-size: 2.2rem;
+            min-width: 55px;
+            text-align: center;
+        }
+
+        .info-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #5a7a6a;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .info-content p, .info-content a {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .info-card:nth-child(1) .info-content p { color: #2c7da0; }
+        .info-card:nth-child(2) .info-content a { color: #7c3aed; }
+        .info-card:nth-child(3) .info-content a { color: #d97706; }
+        .info-card:nth-child(4) .info-content a { color: #e05a5a; }
+
+        .info-card:nth-child(2) .info-content a:hover,
+        .info-card:nth-child(3) .info-content a:hover,
+        .info-card:nth-child(4) .info-content a:hover {
+            text-decoration: underline;
+            opacity: 0.8;
+        }
+
+        /* Connect Section */
+        .connect-section {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .connect-section h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e5a48;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(44, 155, 122, 0.1);
+            padding: 0.7rem 1.3rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(44, 155, 122, 0.2);
+        }
+
+        .social-link.linkedin { color: #0077b5; }
+        .social-link.twitter { color: #1DA1F2; }
+        .social-link.instagram { color: #d62976; }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2rem;
+            border: 1px solid rgba(44, 155, 122, 0.2);
+        }
+
+        .contact-form-wrapper h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #1e5a48, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            color: #2c4b5e;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1px solid rgba(44, 155, 122, 0.3);
+            border-radius: 16px;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 0.95rem;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c9b7a;
+            box-shadow: 0 0 0 3px rgba(44, 155, 122, 0.1);
+            background: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #2c9b7a, #1e6f5c);
+            color: white;
+            padding: 0.9rem;
+            border: none;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(44, 155, 122, 0.3);
+            background: linear-gradient(135deg, #1e6f5c, #155a4a);
+        }
+
+        /* Form Success Message */
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(44, 155, 122, 0.1);
+            border-radius: 20px;
+            color: #1e6f5c;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+
+        .form-success p {
+            margin-bottom: 1rem;
+        }
+
+        .form-fields {
+            display: block;
+        }
+
+        .form-fields.hide {
+            display: none;
+        }
+
+        /* Footer */
+        footer-note {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            background: linear-gradient(135deg, #5a7a6a, #7c3aed);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 600;
+            border-top: 1px solid rgba(120, 150, 135, 0.3);
+            padding-top: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 780px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            nav ul {
+                gap: 1.2rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .container {
+                padding: 0 1.2rem 2rem;
+            }
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            .info-card {
+                padding: 1rem;
+            }
+            .info-icon {
+                font-size: 1.8rem;
+                min-width: 45px;
+            }
+            .info-content p, .info-content a {
+                font-size: 0.95rem;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-form-wrapper {
+                padding: 1.5rem;
+            }
+            .info-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .social-link {
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Shaniece L Dillahunt<span>, MPA</span></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="resume.html">My Resume</a></li>
+                <li><a href="portfolio.html">My Portfolio</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container contact-page">
+        <div class="section-title">
+            <h2>📬 Get In Touch</h2>
+            <div class="underline"></div>
+            <p style="margin-top: 1rem; color: #5a7a6a;">I'd love to connect — whether it's about public administration, collaboration, or professional opportunities.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Left Side: Contact Info Cards -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <div class="info-icon">📧</div>
+                    <div class="info-content">
+                        <h4>EMAIL</h4>
+                        <p>shaniece.dillahunt@rutgers.edu</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📱</div>
+                    <div class="info-content">
+                        <h4>PHONE</h4>
+                        <p>(973) 555-0123</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div class="info-content">
+                        <h4>LOCATION</h4>
+                        <p>Newark, New Jersey</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📄</div>
+                    <div class="info-content">
+                        <h4>NOTARY PUBLIC</h4>
+                        <p>Commissioned since 3/12/2015</p>
+                    </div>
+                </div>
+
+                <!-- Connect Section with YOUR LinkedIn link -->
+                <div class="connect-section">
+                    <h3>🔗 Connect With Me</h3>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/sdillahunt" class="social-link linkedin" target="_blank">💼 LinkedIn</a>
+                        <a href="#" class="social-link twitter" target="_blank">🐦 X / Twitter</a>
+                        <a href="#" class="social-link instagram" target="_blank">📸 Instagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Contact Form -->
+            <div class="contact-form-wrapper">
+                <h3>✉️ Send a Message</h3>
+                
+                <div id="formSuccess" class="form-success">
+                    <p>🎉 Thank you for reaching out!</p>
+                    <p>Your message has been sent. I'll get back to you within 2-3 business days.</p>
+                </div>
+
+                <form id="contactForm" class="form-fields">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message →</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer-note>
+        ✦ Ethical Leadership · Policy Innovation · Public Service Excellence ✦
+    </footer-note>
+
+    <script>
+        // Simple form handling with success message (demo purpose)
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simple validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            
+            if (name && email && subject && message) {
+                // Hide form, show success message
+                contactForm.classList.add('hide');
+                formSuccess.classList.add('show');
+                
+                // Reset form fields
+                contactForm.reset();
+                
+                // Optional: In a real implementation, you would send data to a server here
+                console.log('Form submitted:', { name, email, subject, message });
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+    </script>
+</body>
+</html>
